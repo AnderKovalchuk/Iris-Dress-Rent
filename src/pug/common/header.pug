@@ -1,0 +1,16 @@
+include ../includes/main-menu-item
+
+header.header
+    .container.header__iner
+        .header__logo
+            a(href="/")
+                figure
+                    img(src="img/logo-s.jpg", alt="Iris")
+        nav.header__nav-list
+            ul.header__main-nav
+                +main-menu-item('Главная','/').header__menu-item--active
+                +main-menu-item('Каталог','catalog.html')
+                +main-menu-item('Фотодни и Фотопроекты','photo.html')
+                +main-menu-item('Контакты','contact.html')
+        .header__mobile-burger-iner
+            span
