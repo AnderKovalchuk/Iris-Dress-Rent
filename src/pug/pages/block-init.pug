@@ -1,5 +1,7 @@
 extends ../layouts/main
 
+include ../block/btm
+
 block variables
     - var title = 'Создание блоков';
     - var pageClass = 's';
@@ -35,6 +37,8 @@ block main-content
             a(href="#").btm.btm--service Отправить
             button.btm.btm--action Отправить примерку
             button.btm.btm--service Отменить действие
+            +btm-a--action('Записатся')
+            +btm-a--service('Отправить')
     
     section.container.content-section.content-section--full-height
         .content-section__sitebar-block.content-section__sitebar-block--left.content-section__sitebar-block--mobile-center
@@ -45,7 +49,7 @@ block main-content
                 p Сертификат дает возможность сделать фотосессию в нашего фотографа вместе с выбором платья и работой стилиста.
                 p И чтобы ты не беспокоилась — мы его тебе доставим бесплатно!
                 .content-section__footer
-                    a(href="#").btm.btm--service Узнать детальее
+                    +btm-a--service('Узнать детальее')
             .content-section__image-iner
                 figure
                     img(src="img/img-1.jpg", alt="")
@@ -63,5 +67,17 @@ block main-content
                     p 
                         i Жизнь соткана из моментов…
                     .content-section__footer
-                        a(href="#").btm.btm--service Узнать детальее
-            
+                        +btm-a--service('Узнать детальее')
+    
+    div(style="height: 200px")
+
+    section.content-section.content-section--highlighted
+        .container
+            .title__iner.title__iner--center
+                h2.title__like-h2 Записаться на примерку
+            form(action="index.php", method="get")
+                .fitting-form
+                    input(type="text" placeholder="Твое имя*").form__text
+                    input(type="text" placeholder="Телефон*").form__text
+                    input(type="text" placeholder="E-Mail").form__text
+                    button.btm.btm--action Отправить
