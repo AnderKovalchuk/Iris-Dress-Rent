@@ -71,7 +71,6 @@ gulp.task('styleDev', function(){
 gulp.task('script', function(){
   return gulp.src('src/js/*.js')
     .pipe(concat('main.js'))
-    .pipe(uglify())
     .pipe(gulp.dest('build/js'))
 });
 gulp.task('scriptDev', function(){
@@ -84,17 +83,17 @@ gulp.task('scriptDev', function(){
 
 gulp.task('assets', function(){
   return gulp.src([
-      'src/assets/font/*.*',
-      'src/assets/img/*.*'
-    ])
-    .pipe(gulp.dest('build'));
+    'src/assets/**/*.*',
+    '!src/assets/static'
+  ])
+  .pipe(gulp.dest('build/'));
 });
 gulp.task('assetsDev', function(){
   return gulp.src([
-    'src/assets/font/*.*',
-    'src/assets/img/*.*'
+    'src/assets/**/*.*',
+    '!src/assets/static'
   ])
-  .pipe(gulp.dest('dev'));
+  .pipe(gulp.dest('dev/'));
 });
 
 gulp.task('static', function(){
@@ -109,7 +108,7 @@ gulp.task('staticDev', function(){
 gulp.task('watch', function(){
   gulp.watch('src/sass/**/*.sass', gulp.parallel('styleDev'));
   gulp.watch('src/pug/**/*.pug', gulp.parallel('htmlDev'));
-  gulp.watch('src/ja/*.js', gulp.parallel('script'));
+  gulp.watch('src/js/*.js', gulp.parallel('scriptDev'));
   gulp.watch('src/assets/**/*.*', gulp.parallel('assetsDev', 'staticDev'));
 });
 
