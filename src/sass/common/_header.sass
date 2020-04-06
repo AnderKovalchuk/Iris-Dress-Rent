@@ -1,5 +1,5 @@
 .header
-    border-bottom: 1px solid #b9b9b9
+    border-bottom: 1px solid #ffeef4
     &__iner
         display: flex
         justify-content: space-between
@@ -12,7 +12,7 @@
             height: 70px
     &__nav-list
         display: flex
-        +m-table
+        +m-table()
             display: none
             position: fixed
             left: 0
@@ -31,7 +31,7 @@
         display: flex
         margin: 0
         list-style: none
-        +m-table
+        +m-table()
             flex-direction: column
             justify-content: center
             height: 100%
@@ -61,7 +61,7 @@
         &--active
             color: $main-color
             border-bottom: 2px solid $main-color
-        +m-table
+        +m-table()
             width: 100%
             padding: 2vw 10vw
             font-family: $title-font
@@ -79,7 +79,7 @@
         position: relative
         width: 40px
         z-index: 5
-        +m-table
+        +m-table()
             display: block
         span, span::before, span::after
             position: absolute
