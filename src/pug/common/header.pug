@@ -9,8 +9,15 @@ header.header
         nav.header__nav-list
             ul.header__main-nav
                 +main-menu-item('Главная','/').header__menu-item--active
-                +main-menu-item('Каталог','catalog.html')
+                +main-menu-item('Каталог','category.html')
                 +main-menu-item('Фотодни и Фотопроекты','photo.html')
                 +main-menu-item('Контакты','contact.html')
+            .header__lang
+                span.header__menu-item UA
+                ul.header__lang-list
+                    li.header__lang-item
+                        a(href="/") RU
+                    li.header__lang-item.header__lang-item--active
+                        a(href="/") UA
         .header__mobile-burger-iner
             span

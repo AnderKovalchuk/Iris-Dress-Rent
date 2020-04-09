@@ -1,0 +1,63 @@
+extends ../layouts/main
+
+include ../block/btm
+include ../block/gallery
+
+block variables
+    - var title = 'Продукт';
+    - var pageClass = 'product__page';
+    - var mainContentClass = 'prodyct__main';
+
+block before-main-content
+    .navigation
+        .container
+            .navigation__title
+                h1 004_iris_dress
+            .navigation__bread-crumbs
+                ul
+                    li 
+                        a(href="/") Главная
+                    li
+                        a(href="#") Каталог платьев для аренды
+                    li
+                        a(href="#") Платья
+                    li
+                        a(href="#") 004_iris_dress
+
+block main-content
+    section.container.sec.product__iner
+        .product__title
+            .title__iner
+                h2.title__like-h2 Платье со шлейфом и пышной юбкой
+                span.title__separator
+        .product__image
+            figure
+                img(src="img/catalog_img_1.jpg", alt="")
+        .product__info
+            .product__description.content-section__content-iner
+                p Верх корсетный со шнуровкой на спинке
+                p Корсет и юбка одеваются по отдельности, что позволяет красиво посадить корсет!
+                p Очень красиво «играет» цвет!
+            .product__characteristics
+                ul
+                    li #[span Размер: ] 42-48 (S-L)
+                    li #[span Цвет: ] золотой хамелеон
+                    li #[span Цена: ] 1100 грн/1-24 часа
+            .product__action
+                button.btm.btm--action Забронировать   
+    section.container.sec.gallery
+        .gallery__title
+            .title__iner.title__iner--center
+                h2.title__like-h2 Фото
+                span.title__separator
+        .gallery__iner
+            .gallery__col
+                +gallery-product("img/home_img.jpg")
+                +gallery-product("img/catalog_img_0.jpg")
+                +gallery-product("img/catalog_img_2.jpg")
+                +gallery-product("img/catalog_img_1.jpg")
+            .gallery__col
+                +gallery-product("img/catalog_img_3.jpg")
+                +gallery-product("img/home_img.jpg")
+                +gallery-product("img/catalog_img_0.jpg")
+                +gallery-product("img/catalog_img_2.jpg")
