@@ -1,9 +1,10 @@
 extends ../layouts/main
 
 include ../block/btm
+include ../block/cart
 
 block variables
-    - var title = 'Главная страница';
+    - var title = 'Каталог';
     - var pageClass = 'category__page';
     - var mainContentClass = 'category__main';
 
@@ -25,23 +26,7 @@ block main-content
             h2.title__like-h1.title__like-h1--uppercase Каталог
             span.title__separator
     .container.category__iner
-        article.category__cart-iner
-            a(href="catalog.html")
-                figure.category__image
-                    img(src="img/catalog_img_1.jpg", alt="")
-                h3.category__title Комплекты "мама+дочь"
-        article.category__cart-iner
-            a(href="catalog.html")
-                figure.category__image
-                    img(src="img/catalog_img_2.jpg", alt="")
-                h3.category__title Для беременных
-        article.category__cart-iner
-            a(href="catalog.html")
-                figure.category__image
-                    img(src="img/catalog_img_3.jpg", alt="")
-                h3.category__title Платья
-        article.category__cart-iner
-            a(href="catalog.html")
-                figure.category__image
-                    img(src="img/catalog_img_0.jpg", alt="")
-                h3.category__title Другие образы
+        +cart-category("img/catalog_img_1.jpg", 'Комплекты "мама+дочь"')
+        +cart-category("img/catalog_img_2.jpg", "Для беременных")
+        +cart-category("img/catalog_img_3.jpg", "Платья")
+        +cart-category("img/catalog_img_0.jpg", "Другие образы")

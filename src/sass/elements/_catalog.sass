@@ -1,2 +1,15 @@
 .catalog
-    
+    &__iner
+        padding: 5vw
+        padding-top: 0
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr 1fr
+        gap: 5vw
+        +m-smDesktop()
+            grid-template-columns: 1fr 1fr 1fr
+        +m-table()
+            grid-template-columns: 1fr 1fr
+        +m-phone()
+            grid-template-columns: 1fr
+            gap: 5vh
+            padding: 0 0 5vw 0
