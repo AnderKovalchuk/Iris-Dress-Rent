@@ -10,6 +10,8 @@
             flex-direction: column
             align-items: start
     &__title
+        flex-basis: 60%
+        flex-shrink: 0
         > *
             margin-right: 5vw
             font-family: $title-font
@@ -20,11 +22,13 @@
     &__bread-crumbs
         ul
             display: flex
+            flex-wrap: wrap
             list-style: none
+            line-height: 0.8rem
         li:not(:last-child)::after
             content: '/'
             font-family: $main-font
-            font-size: 0.6rem
+            font-size: 0.6rem         
             color: #999999
             padding-right: 5px
         a
