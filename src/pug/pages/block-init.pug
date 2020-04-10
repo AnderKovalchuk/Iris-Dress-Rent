@@ -1,6 +1,7 @@
 extends ../layouts/main
 
 include ../block/btm
+include ../block/navigation
 
 block variables
     - var title = 'Создание блоков';
@@ -8,16 +9,8 @@ block variables
     - var mainContentClass = 's__main';
 
 block main-content
-    .navigation
-        .container
-            .navigation__title
-                h1 Каталог платьев для аренды
-            .navigation__bread-crumbs
-                ul
-                    li 
-                        a(href="/") Главная
-                    li
-                        a(href="#") Каталог платьев для аренды
+    +navigation('Каталог платьев для аренды', ['Каталог платьев для аренды'])
+
     .full-width-banner.full-width-banner--header-full-height
         figure
             img(src="img/home_img.jpg", alt="")
@@ -25,7 +18,7 @@ block main-content
     section.container.content-section
         .title__iner.content-section__title
             span.title__sub-title Прокат уникальных платьев ручной работы
-            h1.title__like-h1 Мы же знаем как важно для тебя быть особенной!
+            h2.title__like-h1 Мы же знаем как важно для тебя быть особенной!
             span.title__separator
         .content-section__sitebar-block.content-section__sitebar-block--left
             .content-section__content-iner
