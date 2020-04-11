@@ -3,7 +3,8 @@ let gulp          = require('gulp'),
     htmlValidator = require('gulp-w3c-html-validator'),
     sass          = require('gulp-sass'),
     autoprefixer  = require('gulp-autoprefixer'),
-    cleanCSS      = require('gulp-clean-css');
+    cleanCSS      = require('gulp-clean-css'),
+    gcmq          = require('gulp-group-css-media-queries');
     browserSync   = require('browser-sync'),
     notify        = require( 'gulp-notify' ),
     plumber       = require("gulp-plumber"),
@@ -48,6 +49,7 @@ gulp.task('style', function(){
       fiber: Fiber,
       outputStyle: 'expanded',
     }))
+    .pipe(gcmq())
     .pipe(autoprefixer(['last 1 versions']))
     .pipe(cleanCSS({
       level: 2,
