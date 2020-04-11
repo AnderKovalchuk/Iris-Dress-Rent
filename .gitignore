@@ -106,3 +106,6 @@ dist
 # Project build
 dev/
 build/
+deploy/
+
+gulp/deployTask/conect.js
