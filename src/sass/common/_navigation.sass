@@ -1,7 +1,8 @@
 .navigation
     padding: 1vh 0
-    background-color: #f9f9f9
-    border-bottom: 1px solid #ffeef4
+    background-color: $help-color
+    border-bottom: 1px solid $border-color
+
     > *
         display: flex
         justify-content: space-between
@@ -16,7 +17,7 @@
             margin-right: 5vw
             font-family: $title-font
             font-size: 1rem
-            color: #999999
+            color: $addition-text-color
             +m-table()
                 margin: 0
     &__bread-crumbs
@@ -29,14 +30,14 @@
             content: '/'
             font-family: $main-font
             font-size: 0.6rem         
-            color: #999999
+            color: $addition-text-color
             padding-right: 5px
         a
             display: inline-block
             padding-right: 5px
             font-family: $main-font
             font-size: 0.7rem
-            color: #999999
+            color: $addition-text-color
             text-decoration: none
             &:hover
                 text-decoration: underline

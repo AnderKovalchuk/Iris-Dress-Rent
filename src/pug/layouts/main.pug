@@ -3,6 +3,8 @@
 //- variables           - переменые шаблона
 //- head                - добавление в тег head
 //- main-content        - основной контент страницы внутри тега main
+//- before-main-content - перед тегом main
+//- after-main-content  - после тега main 
 
 //- Описание переменых 
 //- ------------------
@@ -23,9 +25,12 @@ html(lang='ru')
 
     body(class=pageClass)
         include ../common/header
+        block before-main-content
 
         main(class=mainContentClass)
             block main-content
-            
+        
+        block after-main-content
+
         include ../common/footer
         script(src="js/main.js")

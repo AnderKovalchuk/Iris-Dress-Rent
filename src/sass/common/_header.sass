@@ -1,5 +1,5 @@
 .header
-    border-bottom: 1px solid #ffeef4
+    border-bottom: 1px solid $border-color
     &__iner
         display: flex
         justify-content: space-between
@@ -42,14 +42,14 @@
                 +m-min-table()
                     height: 20px
                     content: ''
-                    border-left: 1px solid #b9b9b9
+                    border-left: 1px solid $border-color
     &__menu-item
         display: block
         padding: 25px 15px
         margin-bottom: -1px
         font-size: 0.9rem
         font-weight: bold
-        color: #b9b9b9
+        color: $addition-text-color
         text-align: center
         text-decoration: none
         border-bottom: 2px solid transparent
@@ -93,7 +93,7 @@
         display: none
         list-style: none
         background-color: #fff
-        border-bottom: 1px solid #ffeef4       
+        border-bottom: 1px solid $border-color       
         +m-table()
             display: flex
             position: relative
