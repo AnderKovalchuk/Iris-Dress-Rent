@@ -1,7 +1,53 @@
 .footer
-    padding: 10px
+    font-size: 0.8rem
     border-top: 1px solid $border-color
-    &__container
-        font-size: 0.8rem
+    &__iner
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        gap: 30px
+        padding: 20px 0
+        align-items: center
+        span
+            font-weight: bold
+        h3
+            font-size: 1.2em
+        +m-table()
+            grid-template-columns: 1fr
+            text-align: center
+            gap: 10px
+    &__contact
+        text-align: center
+        a
+            color: $main-color
+            text-decoration: none
+            &:hover
+                text-decoration: underline
+        span
+            font-size: 0.9em
+    &__social
+        display: flex
+        justify-content: flex-end
+        a
+            display: inline-block
+            margin: 5px
+            padding: 5px
+            font-size: 0
+            background-color: $addition-text-color
+            border-radius: 50%
+            &:hover
+                background-color: $accent-color
+        +m-table()
+            justify-content: center
+    &__copyright
+        border-top: 1px solid $border-color
+        padding: 5px
         color: $addition-text-color
         text-align: center
+        a
+            color: $addition-text-color
+            text-decoration: none
+            &:hover
+                color: $main-color
+                text-decoration: underline
+            +m-table()
+                display: block

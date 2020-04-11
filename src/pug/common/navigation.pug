@@ -1,0 +1,12 @@
+mixin navigation(title, bread)
+    .navigation
+        .container
+            .navigation__title
+                h1= title
+            .navigation__bread-crumbs
+                ul
+                    li 
+                        a(href="/") Главная
+                    each item in bread
+                        li
+                            a(href="#")= item
