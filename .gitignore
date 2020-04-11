@@ -108,4 +108,4 @@ dev/
 build/
 deploy/
 
-gulp/deployTask/conect.js
+gulp/deployTask/_connect.js
