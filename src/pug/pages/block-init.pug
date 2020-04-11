@@ -1,6 +1,7 @@
 extends ../layouts/main
 
 include ../block/btm
+include ../common/navigation
 
 block variables
     - var title = 'Создание блоков';
@@ -8,16 +9,8 @@ block variables
     - var mainContentClass = 's__main';
 
 block main-content
-    .navigation
-        .container
-            .navigation__title
-                h1 Каталог платьев для аренды
-            .navigation__bread-crumbs
-                ul
-                    li 
-                        a(href="/") Главная
-                    li
-                        a(href="#") Каталог платьев для аренды
+    +navigation('Каталог платьев для аренды', ['Каталог платьев для аренды'])
+
     .full-width-banner.full-width-banner--header-full-height
         figure
             img(src="img/home_img.jpg", alt="")
