@@ -1,22 +1,39 @@
 let gulp        = require('gulp');
     
-let clean       = require('./_clean'),
+let index       = require('./_index.js'),
+    functions   = require('./_functions'),
     common      = require('./_common'),
-    template    = require('./_template')
+    templates   = require('./_templates'),
+    includes    = require('./_includes'),  
     connect     = require('./_connect');
 
-function uploadCommon(){
-    return gulp.src('./src/wp/common/*.php', {buffer: false})
+function uploadIndex(){
+    return gulp.src('./src/wp/index.php', {buffer: false})
         .pipe(connect.dest('/public_html/wp-content/themes/iris-teme'));
 }
-function uploadTemplate(){
-    return gulp.src('./src/wp/template/*.php', {buffer: false})
+function uploadFunctions(){
+    return gulp.src('./src/wp/functions.php', {buffer: false})
         .pipe(connect.dest('/public_html/wp-content/themes/iris-teme'));
+}
+function uploadCommon(){
+    return gulp.src('./src/wp/common/**/*.php', {buffer: false})
+        .pipe(connect.dest('/public_html/wp-content/themes/iris-teme'));
+}
+function uploadTemplates(){
+    return gulp.src('./src/wp/templates/**/*.php', {buffer: false})
+        .pipe(connect.dest('/public_html/wp-content/themes/iris-teme'));
+}
+function uploadIncludes(){
+    return gulp.src('./src/wp/includes/**/*.php', {buffer: false})
+        .pipe(connect.dest('/public_html/wp-content/themes/iris-teme/includes'));
 }
 
 function watch(){
+    gulp.watch('./src/wp/index.php', gulp.parallel(index, uploadIndex));
+    gulp.watch('./src/wp/functions.php', gulp.parallel(functions, uploadFunctions));
     gulp.watch('./src/wp/common/*.php', gulp.parallel(common, uploadCommon));
-    gulp.watch('./src/wp/template/*.php', gulp.parallel(template, uploadTemplate));
+    gulp.watch('./src/wp/templates/**/*.php', gulp.parallel(templates, uploadTemplates));
+    gulp.watch('./src/wp/includes/**/*.php', gulp.parallel(includes, uploadIncludes));
 }
 
 module.exports = gulp.parallel(watch);

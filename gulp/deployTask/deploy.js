@@ -1,19 +1,30 @@
 let gulp        = require('gulp');
     
 let clean       = require('./_clean'),
+    build       = require('../buildTask/build'),
+    index       = require('./_index.js'),
+    functions   = require('./_functions'),
     common      = require('./_common'),
-    style       = require('./_style'),
-    script      = require('./_script'),
-    fonts       = require('./_fonts'),
-    template    = require('./_template')
+    templates   = require('./_templates'),
+    includes    = require('./_includes'),  
+    languages   = require('./_languages'),
+    static      = require('./_static'),
     connect     = require('./_connect');
-
+    
 function upload(){
     return gulp.src('./deploy/**/*.*', {buffer: false})
         .pipe(connect.dest('/public_html/wp-content/themes/iris-teme'));
 }
+function moveBuild(){
+    return gulp.src([
+        './build/**/*.*',
+        '!./build/**/*.html'
+    ])
+    .pipe(gulp.dest('./deploy'))
+}
 
 module.exports = gulp.series(
-    clean, 
-    gulp.parallel(common, template, style, script, fonts),
-    upload);
+    clean, build, moveBuild,
+    gulp.parallel(index, functions, common, templates, includes, languages, static),
+    upload
+);
