@@ -6,6 +6,7 @@ let clean       = require('./_clean'),
     functions   = require('./_functions'),
     common      = require('./_common'),
     templates   = require('./_templates'),
+    woocommerce = require('./_woocommerce'),
     includes    = require('./_includes'),  
     languages   = require('./_languages'),
     static      = require('./_static'),
@@ -25,6 +26,6 @@ function moveBuild(){
 
 module.exports = gulp.series(
     clean, build, moveBuild,
-    gulp.parallel(index, functions, common, templates, includes, languages, static),
+    gulp.parallel(index, functions, common, templates, woocommerce, includes, languages, static),
     upload
 );

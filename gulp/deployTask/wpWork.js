@@ -4,6 +4,7 @@ let index       = require('./_index.js'),
     functions   = require('./_functions'),
     common      = require('./_common'),
     templates   = require('./_templates'),
+    woocommerce = require('./_woocommerce'),
     includes    = require('./_includes'),  
     connect     = require('./_connect');
 
@@ -23,6 +24,10 @@ function uploadTemplates(){
     return gulp.src('./src/wp/templates/**/*.php', {buffer: false})
         .pipe(connect.dest('/public_html/wp-content/themes/iris-teme'));
 }
+function uploadWoocommerce(){
+    return gulp.src('./src/wp/woocommerce/**/*.php', {buffer: false})
+        .pipe(connect.dest('/public_html/wp-content/themes/iris-teme/woocommerce/'));
+}
 function uploadIncludes(){
     return gulp.src('./src/wp/includes/**/*.php', {buffer: false})
         .pipe(connect.dest('/public_html/wp-content/themes/iris-teme/includes'));
@@ -33,6 +38,7 @@ function watch(){
     gulp.watch('./src/wp/functions.php', gulp.parallel(functions, uploadFunctions));
     gulp.watch('./src/wp/common/*.php', gulp.parallel(common, uploadCommon));
     gulp.watch('./src/wp/templates/**/*.php', gulp.parallel(templates, uploadTemplates));
+    gulp.watch('./src/wp/woocommerce/**/*.php', gulp.parallel(woocommerce, uploadWoocommerce));
     gulp.watch('./src/wp/includes/**/*.php', gulp.parallel(includes, uploadIncludes));
 }
 
