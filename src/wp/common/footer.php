@@ -1,14 +1,10 @@
 <footer class="footer">
     <div class="container footer__iner">
         <div class="footer__adress">
-            <h3>Адреса</h3>
-            <p>Київ, проспект Леся Курбаса, 2Б</p>
-            <p>Будівля заводу НВП Сфтурн (центральний вхід)</p>
+            <?php dynamic_sidebar( 'iris_w_adress' ); ?>
         </div>
         <div class="footer__contact">
-            <h3>Контакти</h3>
-            <p><a href="mailto:iris.2017@ukr.net">iris.2017@ukr.net</a></p>
-            <p><a href="tel:+380634300882">+380634300882 <br></a><span>Viber/Telegram</span></p>
+            <?php dynamic_sidebar( 'iris_w_contact' ); ?>
 		</div>
 		<div class="footer__social">
             <a href="#" target="_blank"><i class="icon icon--inst"></i></a>

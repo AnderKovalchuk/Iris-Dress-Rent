@@ -1,4 +1,5 @@
 <?
+add_theme_support( 'widgets' );
 add_theme_support( 'woocommerce' );
 
 function iris_setup_theme(){
@@ -23,6 +24,65 @@ function iris_script() {
 
 add_action( 'wp_print_styles', 'iris_style' );
 add_action( 'wp_enqueue_scripts', 'iris_script' );
+
+
+function iris_register_widgets(){
+	register_sidebar( array(
+		'name'          => 'Контакты',
+		'id'            => "iris_w_contact",
+		'description'   => '',
+		'class'         => '',
+		'before_widget' => false,
+		'after_widget'  => false,
+		'before_title'  => '<h3>',
+		'after_title'   => "</h3>\n",
+    ) );
+    register_sidebar( array(
+		'name'          => 'Адрес',
+		'id'            => "iris_w_adress",
+		'description'   => '',
+		'class'         => '',
+		'before_widget' => false,
+		'after_widget'  => false,
+		'before_title'  => '<h3>',
+		'after_title'   => "</h3>\n",
+	) );
+}
+
+add_action( 'widgets_init', 'iris_register_widgets' );
+
+
+add_action('init', 'my_custom_init');
+function my_custom_init(){
+	register_post_type('project', array(
+		'labels'             => array(
+			'name'               => 'Фотодни и Фотопроекты', // Основное название типа записи
+			'singular_name'      => 'Проект', // отдельное название записи типа Book
+			'add_new'            => 'Добавить',
+			'add_new_item'       => 'Добавить',
+			'edit_item'          => 'Редактировать',
+			'new_item'           => 'Новая',
+			'view_item'          => 'Посмотреть',
+			'search_items'       => 'Найти',
+			'not_found'          => 'Не найдено',
+			'not_found_in_trash' => 'В корзине ничего не найдено',
+			'parent_item_colon'  => '',
+            'menu_name'          => 'Фотодни и Фотопроекты'
+        ),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => '/?{query_var_string}/{post_slug}',
+		'rewrite'            => true,
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+        'menu_position'      => '2-3',
+        'menu_icon'          => 'dashicons-camera-alt',
+		'supports'           => array('title', 'editor', 'excerpt', 'thumbnail','custom-fields')
+	) );
+}
 
 class iris_walker_nav_menu extends Walker_Nav_Menu {
 	function start_lvl(&$output, $depth) {
