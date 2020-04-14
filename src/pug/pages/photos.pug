@@ -1,6 +1,7 @@
 extends ../layouts/main
 
 include ../block/btm
+include ../common/navigation
 include ../block/cart
 
 block variables
@@ -9,23 +10,14 @@ block variables
     - var mainContentClass = 'category__main';
 
 block before-main-content
-    .navigation
-        .container
-            .navigation__title
-                h1 Фотодни и Фотопроекты
-            .navigation__bread-crumbs
-                ul
-                    li 
-                        a(href="/") Главная
-                    li
-                        a(href="#") Фотодни и Фотопроекты
+    +navigation('Фотодни и Фотопроекты', ['Фотодни и Фотопроекты'])
 
 block main-content
-    .container.sec
+    .container
         .title__iner.title__iner--center
             h2.title__like-h1.title__like-h1--uppercase Фотодни и Фотопроекты
             span.title__separator
-    section.container.sec--full-height
+    article.container.sec--full-height
         .grid__iner.grid__iner--sitebar-left
             .grid__col.grid__col--m-center.grid__col--equal-height
                 .title__iner.content-section__title
@@ -37,9 +29,8 @@ block main-content
                     +btm-a--service('Узнать детальее')
             .grid__col.grid__col--equal-height.content-section__image-iner
                 figure
-                    img(src="img/photo_1.jpg", alt="")
-    
-    section.sec.sec--full-height.sec--highlighted
+                    img(src="img/photo_1.jpg", alt="") 
+    article.sec.sec--full-height.sec--highlighted
         .container
             .grid__iner.grid__iner--sitebar-right
                 .grid__col.grid__col--equal-height.content-section__image-iner
@@ -54,7 +45,7 @@ block main-content
                             i Жизнь соткана из моментов…
                     .content-section__footer
                         +btm-a--service('Узнать детальее')
-    section.container.sec--full-height
+    article.container.sec--full-height
         .grid__iner.grid__iner--sitebar-left
             .grid__col.grid__col--m-center.grid__col--equal-height
                 .title__iner.content-section__title
@@ -66,9 +57,8 @@ block main-content
                     +btm-a--service('Узнать детальее')
             .grid__col.grid__col--equal-height.content-section__image-iner
                 figure
-                    img(src="img/photo_1.jpg", alt="")
-    
-    section.sec.sec--full-height.sec--highlighted
+                    img(src="img/photo_1.jpg", alt="")   
+    article.sec.sec--full-height.sec--highlighted
         .container
             .grid__iner.grid__iner--sitebar-right
                 .grid__col.grid__col--equal-height.content-section__image-iner
@@ -83,4 +73,3 @@ block main-content
                             i Жизнь соткана из моментов…
                     .content-section__footer
                         +btm-a--service('Узнать детальее')
-                        
