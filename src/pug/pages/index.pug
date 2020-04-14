@@ -15,7 +15,7 @@ block before-main-content
 block main-content
     section.sec.container
         .title__iner.content-section__title
-            span.title__sub-title Прокат уникальных платьев ручной работы
+            p.title__sub-title Прокат уникальных платьев ручной работы
             h1.title__like-h1 Мы же знаем как важно для тебя быть особенной!
             span.title__separator
         .grid__iner.grid__iner--sitebar-left
@@ -51,7 +51,7 @@ block main-content
                     p Сертификат дает возможность сделать фотосессию в нашего фотографа вместе с выбором платья и работой стилиста.
                     p И чтобы ты не беспокоилась — мы его тебе доставим бесплатно!
                 .content-section__footer
-                    +btm-a--service('Узнать детальее')
+                    +btm-a--service('Узнать детальее', 'block-init.html')
             .grid__col.grid__col--equal-height.content-section__image-iner
                 figure
                     img(src="img/img-1.jpg", alt="")
@@ -69,4 +69,4 @@ block main-content
                         p 
                             i Жизнь соткана из моментов…
                     .content-section__footer
-                        +btm-a--service('Узнать детальее')
+                        +btm-a--service('Узнать детальее', 'page.html')

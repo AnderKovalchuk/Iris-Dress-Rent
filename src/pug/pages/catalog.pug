@@ -1,33 +1,16 @@
-extends ../layouts/main
+extends ../layouts/page
 
-include ../block/btm
 include ../block/cart
 
 block variables
     - var title = 'Каталог';
     - var pageClass = 'catalog__page';
     - var mainContentClass = 'catalog__main';
-
-block before-main-content
-    .navigation
-        .container
-            .navigation__title
-                h1 Платья
-            .navigation__bread-crumbs
-                ul
-                    li 
-                        a(href="/") Главная
-                    li
-                        a(href="#") Каталог платьев для аренды
-                    li
-                        a(href="#") Платья
+    - var bread = ['Каталог платьев для аренды', 'Платья'];
+    - var pageTitle = 'Платья';
 
 block main-content
-    .container.sec
-        .title__iner.title__iner--center
-            h2.title__like-h1.title__like-h1--uppercase Платья
-            span.title__separator
-    .container.catalog__iner
+    .catalog__iner
         +cart-product("img/catalog_img_1.jpg")
         +cart-product("img/catalog_img_0.jpg")
         +cart-product("img/catalog_img_2.jpg")

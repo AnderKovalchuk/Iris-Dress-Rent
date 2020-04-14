@@ -1,0 +1,72 @@
+.project
+    &__iner
+        display: grid
+        grid-template-columns: 1fr 1.2fr
+        gap: 5vw
+        +m-table()
+            grid-template-columns: 1fr
+            grid-template-rows: auto
+            gap: 5vh
+    &__packages
+        display: flex
+        justify-content: center
+        align-items: flex-start
+        +m-table()
+            flex-direction: column
+    &__package
+        margin: 0vw 2vh
+        padding: 20px
+        border-radius: 5px
+        border: 1px solid $border-color
+        +m-table()
+            margin: 0 0 3vh 0
+        &:last-child
+            margin-right: 0
+        &:first-child
+            margin-left: 0
+        .btm
+            display: block
+            margin: 0 auto
+    &__title
+        margin-bottom: 3vh
+        +m-table()
+            text-align: center
+            > *
+                margin: 1vh auto
+    &__info
+        align-self: center
+        +m-table()
+            grid-row: 1 / 2
+    &__image
+        margin: auto
+        figure
+            display: inline-block
+        img
+            max-width: 100%
+            //max-height: 80vh
+            height: auto
+            border-radius: 5px
+            box-shadow: $box-shadow
+    &__description
+        margin-bottom: 20px
+    &__price
+        font-family: $title-font
+        font-size: 1.3em
+        text-align: center
+        margin-bottom: 15px
+        span
+            font-weight: 900
+    &__action
+        .btm
+            font-size: 1rem
+            padding: 15px 25px
+        +m-table()
+            padding: 3vh 0
+            text-align: center
+    &__add-info
+        text-align: center
+        margin: 15px 0
+        border-top: 1px solid $border-color
+        border-bottom: 1px solid $border-color
+    &__footer
+        text-align: center
