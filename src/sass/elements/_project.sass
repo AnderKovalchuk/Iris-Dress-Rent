@@ -9,13 +9,17 @@
             gap: 5vh
     &__packages
         display: flex
+        flex-wrap: wrap
         justify-content: center
         align-items: flex-start
         +m-table()
             flex-direction: column
+            align-items: center
     &__package
-        margin: 0vw 2vh
+        flex-basis: 40%
+        margin: 0vw 2vh 
         padding: 20px
+        flex-grow: 0
         border-radius: 5px
         border: 1px solid $border-color
         +m-table()
