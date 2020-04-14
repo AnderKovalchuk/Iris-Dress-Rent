@@ -1,0 +1,43 @@
+//- Блоки на странице
+//- ------------------
+//- variables           - переменые шаблона
+//- head                - добавление в тег head
+//- main-content        - основной контент страницы внутри тега main
+//- before-main-content - перед тегом main
+//- after-main-content  - после тега main 
+
+//- Описание переменых 
+//- ------------------
+//- title               - заголовок страницы
+//- pageClass           - клас для тега body
+//- mainContentClass    - клас для тега main
+//- bread               - хлебные крошки
+
+include ../common/navigation
+
+block variables
+
+doctype html
+html(lang='ru')
+    head
+        meta(charset='utf-8')
+        title #{title}
+        block head
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="css/main.css")
+
+    body(class=pageClass)
+        include ../common/header
+        block before-main-content
+        main(class=mainContentClass)
+            +navigation(title, bread)
+            .page
+                .title__iner.title__iner--center.page__title
+                    h2.title__like-h1.title__like-h1--uppercase= pageTitle
+                    span.title__separator
+                block main-content
+        
+        block after-main-content
+
+        include ../common/footer
+        script(src="js/main.js")

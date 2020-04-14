@@ -1,0 +1,70 @@
+extends ../layouts/main
+
+include ../block/btm
+include ../common/navigation
+include ../block/cart
+
+block variables
+    - var title = 'Фото дни';
+    - var pageClass = 'projects__page';
+    - var mainContentClass = 'projects__main';
+
+block before-main-content
+    +navigation('Фотодни и Фотопроекты', ['Фотодни и Фотопроекты'])
+
+block main-content
+    .container
+        .title__iner.title__iner--center.page__title
+            h2.title__like-h1.title__like-h1--uppercase Фотодни и Фотопроекты
+            span.title__separator
+    .projects__iner
+        article.projects__item
+            .projects__description
+                .title__iner.content-section__title
+                    h2.title__like-h1.title__like-h1--uppercase "МОЕ ЧУДО"
+                .content-section__content-iner
+                    p На эти кадры Ты будешь смотреть всю жизнь, они пропитанны твоим состоянием в моменте... моменте счастья здесь и сейчас! Незабываемый период, когда твой малыш еще такой кроха!
+                    p Стильная сьемка в актуальном стиле минимализма вместе с твоим малышом!Это ваш маленький мир первого года жизни, который хочется оставить не только в памяти, но и на снимках, которые будут с вашей семьей всю жизнь!
+                .content-section__footer
+                    +btm-a--service('Узнать детальее', 'project.html')
+            .projects__image
+                figure
+                    img(src="img/photo_1.jpg", alt="") 
+        article.projects__item
+            .projects__description
+                .title__iner.content-section__title
+                    h2.title__like-h1.title__like-h1--uppercase "Сказка в образе Белль"
+                .content-section__content-iner
+                    p Каждая девочка мечтает с детства быть принцессой! Этот образ, когда ты в шикраном красивом платье, с макияжем и невероятной укладкой от нашей команды профессионалов ! 
+                    p По твоему желанию у нас есть невероятной красоты диадемы и короны, которые подчеркнут твой образ !
+                        i Жизнь соткана из моментов…
+                .content-section__footer
+                    +btm-a--service('Узнать детальее', 'project.html')
+            .projects__image
+                figure
+                    img(src="img/photo_2.jpg", alt="") 
+        article.projects__item
+            .projects__description
+                .title__iner.content-section__title
+                    h2.title__like-h1.title__like-h1--uppercase "Сказка в образе Белль"
+                .content-section__content-iner
+                    p Каждая девочка мечтает с детства быть принцессой! Этот образ, когда ты в шикраном красивом платье, с макияжем и невероятной укладкой от нашей команды профессионалов ! 
+                    p По твоему желанию у нас есть невероятной красоты диадемы и короны, которые подчеркнут твой образ !
+                        i Жизнь соткана из моментов…
+                .content-section__footer
+                    +btm-a--service('Узнать детальее', 'project.html')
+            .projects__image
+                figure
+                    img(src="img/photo_2.jpg", alt="") 
+        article.projects__item
+            .projects__description
+                .title__iner.content-section__title
+                    h2.title__like-h1.title__like-h1--uppercase "МОЕ ЧУДО"
+                .content-section__content-iner
+                    p На эти кадры Ты будешь смотреть всю жизнь, они пропитанны твоим состоянием в моменте... моменте счастья здесь и сейчас! Незабываемый период, когда твой малыш еще такой кроха!
+                    p Стильная сьемка в актуальном стиле минимализма вместе с твоим малышом!Это ваш маленький мир первого года жизни, который хочется оставить не только в памяти, но и на снимках, которые будут с вашей семьей всю жизнь!
+                .content-section__footer
+                    +btm-a--service('Узнать детальее', 'project.html')
+            .projects__image
+                figure
+                    img(src="img/photo_1.jpg", alt="") 

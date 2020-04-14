@@ -1,31 +1,17 @@
-extends ../layouts/main
+extends ../layouts/page
 
 include ../block/btm
 include ../block/cart
 
 block variables
-    - var title = 'Каталог';
+    - var title = 'Каталог платьев для аренды';
     - var pageClass = 'category__page';
     - var mainContentClass = 'category__main';
-
-block before-main-content
-    .navigation
-        .container
-            .navigation__title
-                h1 Каталог платьев для аренды
-            .navigation__bread-crumbs
-                ul
-                    li 
-                        a(href="/") Главная
-                    li
-                        a(href="#") Каталог платьев для аренды
+    - var bread = ['Каталог платьев для аренды'];
+    - var pageTitle = 'Каталог';
 
 block main-content
-    .container.sec
-        .title__iner.title__iner--center
-            h2.title__like-h1.title__like-h1--uppercase Каталог
-            span.title__separator
-    .container.category__iner
+    .category__iner
         +cart-category("img/catalog_img_1.jpg", 'Комплекты "мама+дочь"')
         +cart-category("img/catalog_img_2.jpg", "Для беременных")
         +cart-category("img/catalog_img_3.jpg", "Платья")
