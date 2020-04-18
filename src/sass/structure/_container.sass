@@ -1,0 +1,21 @@
+.container
+	padding: 0 5vw
+	max-width: 1920px
+	margin: 0 auto
+	&--small
+		padding: 0 10vw
+	&--full-height
+		height: 100vh
+		max-height: 800px
+		display: flex
+		flex-direction: column
+		justify-content: center
+		+m-smDesktop()
+            height: auto
+            max-height: max-content
+	&--highlighted
+        background-color: $help-color
+	+m-table()
+		padding: 0 5vw
+		&--small
+			padding: 0 5vw

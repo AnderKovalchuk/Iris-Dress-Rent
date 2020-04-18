@@ -17,4 +17,20 @@ window.addEventListener('load', () => {
         burger.addEventListener('click', toggleMobmenu);
 
     }());
+
+    (function(){
+        let openPopUp  = d.querySelector('.popup__open'),
+            popUpIner  = d.querySelector('.popup'),
+            clocePopUP = d.querySelector('.popup__close');
+
+            if(!openPopUp && !popUpIner && !clocePopUP)
+                return;
+
+            function togglePopUp(){
+                popUpIner.classList.toggle('popup--active');
+                d.body.classList.toggle('body--hidden');
+            };
+            openPopUp.addEventListener('click', togglePopUp);
+            clocePopUP.addEventListener('click', togglePopUp);
+    }());
 });

@@ -4,6 +4,7 @@
     box-sizing: border-box
 html
 	font-size: 14px
+	scroll-behavior: smooth
 body
 	position: relative
 	min-width: 320px
@@ -17,19 +18,5 @@ body
 		overflow-y: hidden
 	+m-table()
 		font-size: 14px
-.container
-	width: 90%
-	max-width: 1920px
-	margin: 0 auto
-	@include m-table
-		width: 85%
-
-.page
-	max-width: 1920px
-	padding: 0 10vw 10vh 10vw
-	margin: 0 auto
-	@include m-table
-		width: 85%
-		padding: 0 0 10vh 0
-	&__title
-		margin: 5vh 0
+.body--hidden
+	overflow-y: hidden

@@ -1,0 +1,10 @@
+mixin popup(title)
+    article.popup
+        .popup__iner
+            .popup__title
+                .title__iner
+                    h3.title__like-h2= title
+                    span.title__separator
+                a(href="#cloce").popup__close X
+            .popup__content.content-section__content-iner    
+                block
