@@ -32,9 +32,10 @@ html(lang='ru')
         main(class=mainContentClass)
             +navigation(title, bread)
             .page
-                .title__iner.title__iner--center.page__title
-                    h2.title__like-h1.title__like-h1--uppercase= pageTitle
-                    span.title__separator
+                if pageTitle
+                    .title__iner.title__iner--center.page__title
+                        h2.title__like-h1.title__like-h1--uppercase= pageTitle
+                        span.title__separator
                 block main-content
         
         block after-main-content

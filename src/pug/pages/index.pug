@@ -13,26 +13,28 @@ block before-main-content
             img(src="img/home_img.jpg", alt="")
 
 block main-content
-    section.sec.container
-        .title__iner.content-section__title
-            p.title__sub-title Прокат уникальных платьев ручной работы
-            h1.title__like-h1 Мы же знаем как важно для тебя быть особенной!
-            span.title__separator
-        .grid__iner.grid__iner--sitebar-left
-            .grid__col.content-section__content-iner
-                h3 У нас ты найдешь платья для:
-                ul
-                    li сьемки беременности
-                    li love story
-                    li ‘family look’ — платья мама+дочь
-                    li портретная сьемка
-                    li fashion style
-            .grid__col.content-section__content-iner    
-                p #[strong IRIS DRESS RENT] - это сервис проката платьев для фотосессий любых стилей!
-                p Главным нашим преимуществом есть то, что все платья авторского дизайна и ты больше нигде не встретишь такое же!
-                p Мы же знаем, как важно для тебя быть особенной!
-    section.sec.sec--highlighted
-        .container
+    section.container
+        .section
+            .title__iner.content-section__title
+                p.title__sub-title Прокат уникальных платьев ручной работы
+                h1.title__like-h1 Мы же знаем как важно для тебя быть особенной!
+                span.title__separator
+            .grid__iner.grid__iner--sitebar-left
+                .grid__col.content-section__content-iner
+                    h3 У нас ты найдешь платья для:
+                    ul
+                        li сьемки беременности
+                        li love story
+                        li ‘family look’ — платья мама+дочь
+                        li портретная сьемка
+                        li fashion style
+                .grid__col.content-section__content-iner    
+                    p #[strong IRIS DRESS RENT] - это сервис проката платьев для фотосессий любых стилей!
+                    p Главным нашим преимуществом есть то, что все платья авторского дизайна и ты больше нигде не встретишь такое же!
+                    p Мы же знаем, как важно для тебя быть особенной!
+    
+    section.container.container--highlighted
+        .section
             .title__iner.title__iner--center
                 h2.title__like-h2 Записаться на примерку
             form(action="index.php", method="get")
@@ -41,8 +43,9 @@ block main-content
                     input(type="text" placeholder="Телефон*").form__text
                     input(type="text" placeholder="E-Mail").form__text
                     button.btm.btm--action Отправить   
-    section.container.sec--full-height
-        .grid__iner.grid__iner--sitebar-left
+    
+    section.container.container--full-height
+        .section--x2.grid__iner.grid__iner--sitebar-left
             .grid__col.grid__col--m-center.grid__col--equal-height
                 .title__iner.content-section__title
                     h2.title__like-h1.title__like-h1--uppercase Подарочные сертификаты
@@ -55,18 +58,18 @@ block main-content
             .grid__col.grid__col--equal-height.content-section__image-iner
                 figure
                     img(src="img/img-1.jpg", alt="")
-    section.sec.sec--full-height.sec--highlighted
-        .container
-            .grid__iner.grid__iner--sitebar-right
-                .grid__col.grid__col--equal-height.content-section__image-iner
-                    figure
-                        img(src="img/img-2.jpg", alt="")
-                .grid__col.grid__col--m-first.grid__col--m-center.grid__col--equal-height
-                    .title__iner.content-section__title
-                        h2.title__like-h1.title__like-h1--uppercase Фотодни и Фотопроекты «Все Включено»
-                    .content-section__content-iner
-                        p Авторские тематические фотосессии с готовой концепцией от нашей команды «Happy Moments Group» by Iris Dress Rent!
-                        p 
-                            i Жизнь соткана из моментов…
-                    .content-section__footer
-                        +btm-a--service('Узнать детальее', 'page.html')
+
+    section.container.container--full-height.container--highlighted
+        .section--x2.grid__iner.grid__iner--sitebar-right
+            .grid__col.grid__col--equal-height.content-section__image-iner
+                figure
+                    img(src="img/img-1.jpg", alt="")
+            .grid__col.grid__col--m-first.grid__col--m-center.grid__col--equal-height
+                .title__iner.content-section__title
+                    h2.title__like-h1.title__like-h1--uppercase Фотодни и Фотопроекты «Все Включено»
+                .content-section__content-iner
+                    p Авторские тематические фотосессии с готовой концепцией от нашей команды «Happy Moments Group» by Iris Dress Rent!
+                    p 
+                        i Жизнь соткана из моментов…
+                .content-section__footer
+                    +btm-a--service('Узнать детальее', 'page.html')

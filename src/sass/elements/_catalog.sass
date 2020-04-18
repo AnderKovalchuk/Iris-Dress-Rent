@@ -1,7 +1,7 @@
 .catalog
     &__iner
         display: grid
-        grid-template-columns: 1fr 1fr 1fr 1fr
+        grid-template-columns: 1fr 1fr 1fr
         gap: 5vw
         +m-smDesktop()
             grid-template-columns: 1fr 1fr 1fr
@@ -10,3 +10,25 @@
         +m-phone()
             grid-template-columns: 1fr
             gap: 5vh
+    &__pagination
+        ul
+            display: flex
+            justify-content: center
+            list-style: none
+        li
+            width: 30px
+            height: 30px
+            display: flex
+            align-items: center
+            justify-content: center
+            margin: 0 5px
+            border: 1px solid $border-color
+            &:hover
+                background-color: $help-color
+        a
+            padding: 5px
+            color: $main-color
+            text-decoration: none
+        .current
+            font-weight: bold
+            

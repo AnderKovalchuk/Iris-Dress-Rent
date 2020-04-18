@@ -3,6 +3,7 @@ extends ../layouts/main
 include ../block/btm
 include ../common/navigation
 include ../block/gallery
+include ../block/popup
 
 block variables
     - var title = 'МОЕ ЧУДО';
@@ -13,8 +14,8 @@ block before-main-content
     +navigation('МОЕ ЧУДО', ['Фотодни и Фотопроекты', 'МОЕ ЧУДО'])
 
 block main-content
-    .page
-        section.sec.project__iner
+    .container--small
+        section.section.project__iner
             .project__image
                 figure
                     img(src="img/photo_1.jpg", alt="")
@@ -32,9 +33,15 @@ block main-content
                     p Доверься нашей команде, приходи к нам на фотопроэкт "МОЕ ЧУДО" и мы обо всем позаботимся!
                     p Для тебя мы подготовили 2 пакета сьемок, выбор за тобой!
                 .project__action
-                    button.btm.btm--action Забронировать
-            
-        section.sec.gallery 
+                    a(href="#packages").btm.btm--action Забронировать
+                    a.popup__open.popup__open.btm.btm--service Условия бронирования
+        section.section.project__video
+            .title__iner.title__iner--center.project__title
+                h2.title__like-h2 Видео
+                span.title__separator
+            iframe(src="https://www.youtube.com/embed/tuxDxLAQbAs" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+        
+        section.section.gallery 
             .title__iner.title__iner--center.gallery__title
                 h2.title__like-h1 Фото
                 span.title__separator
@@ -56,7 +63,8 @@ block main-content
                 +gallery-product("img/catalog_img_0.jpg")
                 +gallery-product("img/catalog_img_2.jpg")
 
-        section.project__packages
+    section.container.container--highlighted(id="packages")
+        .section.project__packages
             .project__package
                 .title__iner.title__iner--center.project__title
                     h2.title__like-h2 ПАКЕТ "STANDART"
@@ -93,10 +101,26 @@ block main-content
                     p #[span СТОИМОСТЬ: ] 5 000 грн.
                 .project__action
                     button.btm.btm--action Забронировать
-        section.sec.project__add-info
+        .section.project__add-info
             .title__iner.title__iner--center
                 h2.title__like-h2 ДОПОЛНИТЕЛЬНО
                 span.title__separator
             p - дополнительная обработка фото 50 грн/шт
-        footer.sec.project__footer
-            a(href='#').btm.btm--service Условия бронирования
+
+
+block after-main-content
+    +popup('Условия бронирования')
+        h3 ДЛЯ БРОНИРОВАНИЯ ФОТОСЕССИИ:
+        ol
+            li ВЫБЕРИТЕ ПОДХОДЯЩУЮ ДЛЯ ВАС СЬЕМКУ (фотопроект или индивидуальная фотосессия).
+            li Далее мы с Вами согласовываем даты и время съёмки и вносим вас в наш график фотосессий! Бронирование выбранной даты осуществляется только после внесения предоплаты в размере 1000 грн. на карту (приватБанк).
+            li После внесения предоплаты мы отправляем Вам наши рекомендации о подготовке к фотосессии.
+            li Полная стоимость фотосессии оплачивается в день фотосессии. 
+        p !!! Так же, мы настаиваем на предварительной примерки образов для сьемки в нашем шоуруме (проспект Леся Курбаса,2Б)
+        
+        h3 ОТМЕНА/ПЕРЕНОС ДАТЫ СЬЕМКИ:
+        p Если Вы захотели отменить Вашу сьемку после внесения предопоплаты, деньги, Вами внесенные, мы не возвращаем! У нас большая команда и каждый делает свое дело с Любовью и мы все готовимся, согласно нашему графику сьемок! И записав Вас, мы уже кому то отказали, поэтому просим отнестись с пониманием! 
+        p Для наших сьемок мы бронируем и оплачиваем залы в студиях заранее! Согласно правил фотостудий, перенести время на другое, без штрафов, мы можем не позже 48 часов до ранее запланированной сьемки! Мы тоже люди и всякие моменты в жизни случаются, но мы очень просим быть внимательным к этому правилу и отнестись с пониманием!
+        p Вы получите фото через 4 недели после съемки в количестве и упаковке, согласно выбранного Вами пакета сьемки!
+        p Мы всегда на связи +38063-430-08-82 (Viber/Telegram)
+        
