@@ -3,6 +3,7 @@ extends ../layouts/main
 include ../block/btm
 include ../common/navigation
 include ../block/gallery
+include ../block/popup
 
 block variables
     - var title = 'Продукт';
@@ -13,16 +14,22 @@ block before-main-content
     +navigation('004_iris_dress', ['Каталог платьев для аренды', 'Платья', '004_iris_dress'])
 
 block main-content
+    .overlay
+
     .page
         section.sec.product__iner
-            .product__title
-                .title__iner
-                    h2.title__like-h2 Платье со шлейфом и пышной юбкой
+            .product__mob-title
+                .title__iner.title__iner--center
+                    h3.title__like-h1 16_iris_dress
                     span.title__separator
             .product__image
                 figure
                     img(src="img/catalog_img_1.jpg", alt="")
             .product__info
+                .product__title
+                    .title__iner
+                        h2.title__like-h2 16_iris_dress
+                        span.title__separator
                 .product__description.content-section__content-iner
                     p Верх корсетный со шнуровкой на спинке
                     p Корсет и юбка одеваются по отдельности, что позволяет красиво посадить корсет!
@@ -31,9 +38,10 @@ block main-content
                     ul
                         li #[span Размер: ] 42-48 (S-L)
                         li #[span Цвет: ] золотой хамелеон
-                        li #[span Цена: ] 1100 грн/1-24 часа
+                        li #[span Цена: ] 5 000 грн
                 .product__action
-                    button.btm.btm--action Забронировать   
+                    button.btm.btm--action Забронировать
+                    button.popup__open.btm.btm--service Как забронировать?
         section.sec.gallery 
             .title__iner.title__iner--center.gallery__title
                 h2.title__like-h2 Фото
@@ -51,3 +59,22 @@ block main-content
                 +gallery-product("img/home_img.jpg")
                 +gallery-product("img/catalog_img_0.jpg")
                 +gallery-product("img/catalog_img_2.jpg")
+
+        +popup('Як забронювати сукню?')
+            h4 Крок 1 Каталог
+            p Виберу сукню з потрібного тобі каталогу
+            
+            h4 Крок 2 Примірка
+            p 90% наших суконь можна забронювати без примірки! ми відшиваємо їх одразу на декілька розмірів! Але, якщо ти хочеш його побачити, ми тебе чекаємо в нашому шоурумі
+                
+            h4 Крок 3 Бронювання
+            p Для бронювання тобі потрібно заповнити заявку і внести передплату 50% від вартості (реквізити тобі повідомить менеджер після оформлення заявки)
+                
+            h4 Крок 4 День прокату
+            p Ми чекатимемо тебе у нас в шоурумі в день прокату! Лишай завдаток, залишок по оплаті і біжи на фотосесію
+            p Свої сукні ти отримаєш в нашому шоу румі за адресою Проспект Леся Курбаса, 2б за завчасно узгодженим часом! 
+            
+            h4 ВАЖЛИВІ ДЕТАЛІ
+            p Ми турбуємося про чистоту кожної сукні і тобі не потрібно до чи після фотосесії турбуватися про це!
+            p На пери, не прасуй, будь обережною з використаннями косметичних засобів!
+    
