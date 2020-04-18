@@ -1,0 +1,101 @@
+extends ../layouts/main
+
+include ../block/btm
+
+block variables
+    - var title = 'Создание Структуры';
+    - var pageClass = 's';
+    - var mainContentClass = 's__main';
+
+block main-content
+    h1 HI
+    .container(style="background-color: #25ea56;")
+        p container
+    .container.container--small(style="background-color: #632456;")
+        p container
+
+    section.container.container--full-height
+        .section--x2.grid__iner.grid__iner--sitebar-left
+            .grid__col.grid__col--m-center.grid__col--equal-height
+                .title__iner.content-section__title
+                    h2.title__like-h1.title__like-h1--uppercase Подарочные сертификаты
+                .content-section__content-iner
+                    p Отличный сюрприз для друзей, близких и родных.
+                    p Сертификат дает возможность сделать фотосессию в нашего фотографа вместе с выбором платья и работой стилиста.
+                    p И чтобы ты не беспокоилась — мы его тебе доставим бесплатно!
+                .content-section__footer
+                    +btm-a--service('Узнать детальее', 'block-init.html')
+            .grid__col.grid__col--equal-height.content-section__image-iner
+                figure
+                    img(src="img/img-1.jpg", alt="")
+
+    section.container.container--full-height.container--highlighted
+        .section--x2
+            .grid__iner.grid__iner--sitebar-right
+                .grid__col.grid__col--equal-height.content-section__image-iner
+                    figure
+                        img(src="img/img-1.jpg", alt="")
+                .grid__col.grid__col--m-first.grid__col--m-center.grid__col--equal-height
+                    .title__iner.content-section__title
+                        h2.title__like-h1.title__like-h1--uppercase Фотодни и Фотопроекты «Все Включено»
+                    .content-section__content-iner
+                        p Авторские тематические фотосессии с готовой концепцией от нашей команды «Happy Moments Group» by Iris Dress Rent!
+                        p 
+                            i Жизнь соткана из моментов…
+                    .content-section__footer
+                        +btm-a--service('Узнать детальее', 'page.html')
+
+    .page
+        section.section.product__iner
+            .product__mob-title
+                .title__iner.title__iner--center
+                    h3.title__like-h1 16_iris_dress
+                    span.title__separator
+            .product__image
+                figure
+                    img(src="img/catalog_img_1.jpg", alt="")
+            .product__info
+                .product__title
+                    .title__iner
+                        h2.title__like-h2 16_iris_dress
+                        span.title__separator
+                .product__description.content-section__content-iner
+                    p Верх корсетный со шнуровкой на спинке
+                    p Корсет и юбка одеваются по отдельности, что позволяет красиво посадить корсет!
+                    p Очень красиво «играет» цвет!
+                .product__characteristics
+                    ul
+                        li #[span Размер: ] 42-48 (S-L)
+                        li #[span Цвет: ] золотой хамелеон
+                        li #[span Цена: ] 5 000 грн
+                .product__action
+                    button.btm.btm--action Забронировать
+                    button.popup__open.btm.btm--service Как забронировать?
+
+
+    .projects__iner
+        article.projects__item
+            .projects__description
+                .title__iner.content-section__title
+                    h2.title__like-h1.title__like-h1--uppercase "МОЕ ЧУДО"
+                .content-section__content-iner
+                    p На эти кадры Ты будешь смотреть всю жизнь, они пропитанны твоим состоянием в моменте... моменте счастья здесь и сейчас! Незабываемый период, когда твой малыш еще такой кроха!
+                    p Стильная сьемка в актуальном стиле минимализма вместе с твоим малышом!Это ваш маленький мир первого года жизни, который хочется оставить не только в памяти, но и на снимках, которые будут с вашей семьей всю жизнь!
+                .content-section__footer
+                    +btm-a--service('Узнать детальее', 'project.html')
+            .projects__image
+                figure
+                    img(src="img/photo_1.jpg", alt="") 
+        article.projects__item
+            .projects__description
+                .title__iner.content-section__title
+                    h2.title__like-h1.title__like-h1--uppercase "Сказка в образе Белль"
+                .content-section__content-iner
+                    p Каждая девочка мечтает с детства быть принцессой! Этот образ, когда ты в шикраном красивом платье, с макияжем и невероятной укладкой от нашей команды профессионалов ! 
+                    p По твоему желанию у нас есть невероятной красоты диадемы и короны, которые подчеркнут твой образ !
+                        i Жизнь соткана из моментов…
+                .content-section__footer
+                    +btm-a--service('Узнать детальее', 'project.html')
+            .projects__image
+                figure
+                    img(src="img/photo_2.jpg", alt="") 
