@@ -25,10 +25,9 @@
 віавіа
 <?php echo is_post_type_archive(); ?>
 
-<?php the_content(); ?>
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-   <!-- Вывода постов, функции цикла: the_title() и т.д. -->
+    <?php the_content(); ?>
 <?php endwhile; else: ?>
 	Записей нет.
 <?php endif; ?>

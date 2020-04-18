@@ -85,7 +85,7 @@ function my_custom_init(){
 }
 
 class iris_walker_nav_menu extends Walker_Nav_Menu {
-	function start_lvl(&$output, $depth) {
+	function start_lvl( &$output, $depth, $args ) {
         $output .= '<ul class="header__main-nav">';
     }
     function start_el( &$output, $item, $depth, $args ) {
