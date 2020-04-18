@@ -1,0 +1,10 @@
+.category
+    &__iner
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        gap: 5vw
+        +m-smDesktop()
+            grid-template-columns: 1fr 1fr
+        +m-phone()
+            grid-template-columns: 1fr
+            gap: 5vh

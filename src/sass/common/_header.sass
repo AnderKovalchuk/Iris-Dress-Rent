@@ -1,0 +1,171 @@
+.header
+    border-bottom: 1px solid $border-color
+    &__iner
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__logo
+        a
+            display: block
+            font-size: 0
+        img
+            height: 70px
+    &__nav-list
+        display: flex
+        +m-table()
+            display: none
+            position: fixed
+            left: 0
+            top: 0
+            width: 100%
+            height: 100%
+            flex-direction: column
+            justify-content: center
+            align-items: flex-end
+            overflow-y: auto
+            padding-top: 10vh
+            background-color: rgba(0, 0, 0, 0.8) 
+        &--active
+            display: flex
+    &__main-nav
+        display: flex
+        margin: 0
+        list-style: none
+        +m-table()
+            flex-direction: column
+            justify-content: center
+            height: 100%
+        li
+            display: flex
+            align-items: center
+            &::after
+                +m-min-table()
+                    height: 20px
+                    content: ''
+                    border-left: 1px solid $border-color
+    &__menu-item
+        display: block
+        padding: 25px 15px
+        margin-bottom: -1px
+        font-size: 0.9rem
+        font-weight: bold
+        color: $addition-text-color
+        text-align: center
+        text-decoration: none
+        border-bottom: 2px solid transparent
+        transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out, border-color 0.4s ease-in-out
+        &:hover
+            +m-min-table()
+                color: $main-color
+                border-bottom: 2px solid $main-color
+        &--active
+            color: $main-color
+            border-bottom: 2px solid $main-color
+        +m-table()
+            width: 100%
+            padding: 2vw 10vw
+            font-family: $title-font
+            font-size: 1.5em
+            font-weight: normal
+            color: #ffffff
+            text-align: right
+            text-transform: uppercase
+            &--active
+                color: #ffffff
+                font-weight: bold
+                border-bottom: none
+    &__lang
+        position: relative
+        font-size: 0.9rem
+        +m-min-table()
+            &:hover 
+                > *
+                    display: block
+                span
+                    color: $main-color
+        +m-table()
+            span
+                display: none
+    &__lang-list
+        position: absolute
+        margin-top: -2px
+        width: 100%
+        display: none
+        list-style: none
+        background-color: #fff
+        border-bottom: 1px solid $border-color       
+        +m-table()
+            display: flex
+            position: relative
+            padding: 5vw 10vw
+            background-color: transparent
+            border-bottom: none
+    &__lang-item    
+        a
+            display: inline-block
+            width: 100%
+            padding: 0.5em 0
+            font-weight: bold
+            color: #b9b9b9
+            text-align: center
+            text-decoration: none
+            &:hover
+                color: $main-color
+        +m-table()
+            display: flex
+            align-items: center
+            &:not(:last-child):after
+                display: inline-block
+                content: '/'
+                padding: 0 2vw
+                font-family: $title-font
+                color: #ffffff
+            a
+                width: 100%
+                font-family: $title-font
+                font-size: 1rem
+                font-weight: normal
+                color: #ffffff
+                text-align: right
+                text-transform: uppercase
+            &--active
+                a
+                    text-decoration: underline
+                    
+    &__mobile-burger-iner
+        display: none
+        position: relative
+        width: 40px
+        z-index: 5
+        +m-table()
+            display: block
+        span, span::before, span::after
+            position: absolute
+            display: block
+            content: ''
+            width: 100%
+            height: 3px
+            background-color: $main-color
+            border-radius: 3px
+            transition: transform 0.15s ease
+        span
+            &::before
+                top: -10px
+            &::after
+                bottom: -10px
+        &--active
+            span, span::before, span::after
+                background-color: #fff
+            span
+                transform: rotate(225deg)
+                transition-delay: 0.14s
+                transition-timing-function: cubic-bezier(0.215,0.61,0.355,1)
+                &::before
+                    top: 0
+                    opacity: 0
+                    transition: top 0.1s ease-out,opacity 0.1s 0.14s ease-out,background-color 0.15s ease
+                &::after
+                    bottom: 0
+                    transform: rotate(-90deg)
+                    transition: bottom 0.1s ease-out,transform 0.3s 0.14s cubic-bezier(0.215,0.61,0.355,1),background-color 0.15s ease
+

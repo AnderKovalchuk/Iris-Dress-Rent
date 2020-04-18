@@ -1,0 +1,12 @@
+mixin cart-product(img= '')
+    .cart__iner
+        a(href="product.html")
+            figure.cart__image
+                img(src= img, alt="")
+
+mixin cart-category(img= '', title= '')
+    article.cart__iner
+        a(href="catalog.html")
+            figure.cart__image.cart__image--not-bottom-radius
+                img(src= img, alt="")
+            h3.cart__title= title

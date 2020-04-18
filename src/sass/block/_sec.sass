@@ -1,0 +1,23 @@
+.sec
+    padding: 5vh 0
+    &--b-padding
+        padding: 10vh 0
+    &--full-height
+        height: 100vh
+        max-height: 800px
+        padding: 10vh 0
+        display: flex
+        flex-direction: column
+        justify-content: center
+        > .container
+            height: 100%
+        .grid__iner
+            grid-template-rows: 100%
+        +m-smDesktop()
+            height: auto
+            max-height: max-content
+            padding: 5vh 0
+            .grid__iner
+                grid-template-rows: auto
+    &--highlighted
+        background-color: $help-color

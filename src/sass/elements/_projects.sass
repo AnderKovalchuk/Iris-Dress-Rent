@@ -1,0 +1,45 @@
+.projects
+    &__item
+        display: grid
+        gap: 5vw
+        max-width: 1920px
+        margin: 0 auto
+        padding: 5vw 0
+        &:first-child
+                padding-top: 0 !important
+        +m-table()
+            gap: 5vh
+            padding: 10vh 0
+        &:nth-child(odd)
+            grid-template-columns: 0.8fr 1fr
+            width: 90%
+            +m-table()
+                grid-template-columns: 1fr
+        &:nth-child(even)
+            grid-template-columns: 1fr 0.8fr
+            padding-left: 5%
+            padding-right: 5%
+            background-color: $help-color
+            .projects__image
+                grid-column: 1 / 2
+                grid-row: 1 / 2
+            +m-table()
+                grid-template-columns: 1fr
+                .projects__image
+                    grid-row: 2 / 3
+    &__description
+        align-self: center
+        +m-table()
+            text-align: center
+            align-items: center
+    &__image
+        img
+            width: 100%
+            max-width: 1000px
+            max-height: 80vh
+            object-fit: cover
+            box-shadow: $box-shadow
+            border-radius: 5px
+        +m-table()
+            img
+                max-height: auto

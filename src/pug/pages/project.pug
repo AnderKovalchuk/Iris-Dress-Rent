@@ -1,0 +1,102 @@
+extends ../layouts/main
+
+include ../block/btm
+include ../common/navigation
+include ../block/gallery
+
+block variables
+    - var title = 'МОЕ ЧУДО';
+    - var pageClass = 'project__page';
+    - var mainContentClass = 'project__main';
+
+block before-main-content
+    +navigation('МОЕ ЧУДО', ['Фотодни и Фотопроекты', 'МОЕ ЧУДО'])
+
+block main-content
+    .page
+        section.sec.project__iner
+            .project__image
+                figure
+                    img(src="img/photo_1.jpg", alt="")
+            .project__info
+                .title__iner.project__title
+                    h2.title__like-h1 'МОЕ ЧУДО'
+                    span.title__separator
+                    p.title__sub-title Фотопроект проходит в лучшей фотостудии Киева IN LIGHT для мам с малышами 4-10 мес!
+                .project__description.content-section__content-iner
+                    p Ты получишь профессиональные услуги от нашей команды, которая очень ценит и любит свою работу!
+                    p Твоя семья получит удовольствие от сьемки, проведенной вместе с нами!
+                    p Платье для мамы и шортики для малыша входят в стоимость из нашего проката!
+                    p С тобой на сьемке будет присутствовать стилист по кадру, который поможет одеться, выложить красиво платье, так же поможет с позированием! 
+                    p Рекомендуемый возраст проведения такой сьемки 4-10 месяцев! 
+                    p Доверься нашей команде, приходи к нам на фотопроэкт "МОЕ ЧУДО" и мы обо всем позаботимся!
+                    p Для тебя мы подготовили 2 пакета сьемок, выбор за тобой!
+                .project__action
+                    button.btm.btm--action Забронировать
+            
+        section.sec.gallery 
+            .title__iner.title__iner--center.gallery__title
+                h2.title__like-h1 Фото
+                span.title__separator
+            .gallery__iner.gallery__iner--4
+                +gallery-product("img/catalog_img_3.jpg")
+                +gallery-product("img/home_img.jpg")
+                +gallery-product("img/catalog_img_0.jpg")
+                +gallery-product("img/catalog_img_2.jpg")
+                +gallery-product("img/home_img.jpg")
+                +gallery-product("img/catalog_img_0.jpg")
+                +gallery-product("img/catalog_img_2.jpg")
+                +gallery-product("img/catalog_img_1.jpg")
+                +gallery-product("img/catalog_img_3.jpg")
+                +gallery-product("img/home_img.jpg")
+                +gallery-product("img/catalog_img_0.jpg")
+                +gallery-product("img/catalog_img_2.jpg")
+                +gallery-product("img/catalog_img_3.jpg")
+                +gallery-product("img/home_img.jpg")
+                +gallery-product("img/catalog_img_0.jpg")
+                +gallery-product("img/catalog_img_2.jpg")
+
+        section.project__packages
+            .project__package
+                .title__iner.title__iner--center.project__title
+                    h2.title__like-h2 ПАКЕТ "STANDART"
+                    span.title__separator
+                .project__description.content-section__content-iner
+                    ul
+                        li 1 час работы фотографа
+                        li 1 час аренда зала 
+                        li макияж 
+                        li укладка
+                        li аренда гримерной при студии
+                        li 2 платья/образа
+                        li работа стилиста по кадру
+                        li 20 обработанных фото в авторской ретуши фотографа
+                        li 100 фото с цветокорекцией
+                        li 5 анонсных фото в течении 1-3 дней
+                        li 20 напечатанных фото в размере 15*21
+                .project__price
+                    p #[span СТОИМОСТЬ: ] 5 000 грн.
+                .project__action
+                    button.btm.btm--action Забронировать
+            .project__package
+                .title__iner.title__iner--center.project__title
+                    h2.title__like-h2 ПАКЕТ "STANDART"
+                    span.title__separator
+                .project__description.content-section__content-iner
+                    ul
+                        li 1 час работы фотографа
+                        li 20 обработанных фото в авторской ретуши фотографа
+                        li 100 фото с цветокорекцией
+                        li 5 анонсных фото в течении 1-3 дней
+                        li 20 напечатанных фото в размере 15*21
+                .project__price
+                    p #[span СТОИМОСТЬ: ] 5 000 грн.
+                .project__action
+                    button.btm.btm--action Забронировать
+        section.sec.project__add-info
+            .title__iner.title__iner--center
+                h2.title__like-h2 ДОПОЛНИТЕЛЬНО
+                span.title__separator
+            p - дополнительная обработка фото 50 грн/шт
+        footer.sec.project__footer
+            a(href='#').btm.btm--service Условия бронирования

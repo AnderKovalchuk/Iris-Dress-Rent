@@ -1,0 +1,25 @@
+extends ../layouts/page
+
+include ../block/cart
+
+block variables
+    - var title = 'Каталог';
+    - var pageClass = 'catalog__page';
+    - var mainContentClass = 'catalog__main';
+    - var bread = ['Каталог платьев для аренды', 'Платья'];
+    - var pageTitle = 'Платья';
+
+block main-content
+    .catalog__iner
+        +cart-product("img/catalog_img_1.jpg")
+        +cart-product("img/catalog_img_0.jpg")
+        +cart-product("img/catalog_img_2.jpg")
+        +cart-product("img/catalog_img_3.jpg")
+        +cart-product("img/catalog_img_2.jpg")
+        +cart-product("img/catalog_img_0.jpg")
+        +cart-product("img/catalog_img_1.jpg")
+        +cart-product("img/catalog_img_0.jpg")
+        +cart-product("img/catalog_img_2.jpg")
+        +cart-product("img/catalog_img_3.jpg")
+        +cart-product("img/catalog_img_2.jpg")
+        +cart-product("img/catalog_img_0.jpg")
