@@ -36,8 +36,8 @@ block main-content
                     li #[span Цвет: ] золотой хамелеон
                     li #[span Цена: ] 5 000 грн
             .product__action
-                button.btm.btm--action Забронировать
-                button.popup__open.btm.btm--service Как забронировать?
+                a(href="" data-value-product-id="1266" class="awooc-custom-order button alt dont-show-add-to-card" id="awooc-custom-order-button" style="position: static; zoom: 1;") Забронировать
+                button.btm.btm--service(onclick="toggleInfoPopup('infoPopup')") Как забронировать?
         
     section.section.gallery 
         .title__iner.title__iner--center.gallery__title
@@ -59,7 +59,7 @@ block main-content
 
 
 block after-main-content
-    +popup('Як забронювати сукню?')
+    +popup('Як забронювати сукню?', 'infoPopup')
         h4 Крок 1 Каталог
         p Виберу сукню з потрібного тобі каталогу
         

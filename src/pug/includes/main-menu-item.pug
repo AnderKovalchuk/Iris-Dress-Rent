@@ -1,3 +1,5 @@
 mixin main-menu-item(text, link)
     li
         a(href= link class=attributes.class).header__menu-item= text
+        if block
+                block
