@@ -46,7 +46,9 @@
                     border-left: 1px solid $border-color
             &:hover > ul
                 display: block
-                
+            +m-table()
+                flex-direction: column
+
     &__menu-item
         display: block
         padding: 25px 15px
@@ -100,10 +102,20 @@
                 color: $main-color     
         +m-table()
             display: flex
+            flex-direction: column
             position: relative
-            padding: 5vw 10vw
+            top: 0
+            padding: 0
             background-color: transparent
             border-bottom: none
+            a
+                text-align: right
+                font-family: $title-font
+                font-size: 1.5rem
+                padding: 2vw 10vw
+                color: #fff
+                font-weight: normal
+                text-transform: uppercase
     &__lang
         position: relative
         font-size: 0.9rem
