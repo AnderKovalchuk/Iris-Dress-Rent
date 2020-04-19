@@ -113,8 +113,11 @@ function my_custom_init(){
 
 class iris_walker_nav_menu extends Walker_Nav_Menu {
 	function start_lvl( &$output, $depth, $args ) {
-        $output .= '<ul class="header__main-nav">';
-    }
+		if( $depth == 1 )
+			$output .= '<ul class="header__main-nav">';
+		else
+			$output .= '<ul class="header__sub-menu">';
+	}
     function start_el( &$output, $item, $depth, $args ) {
         global $wp_query;           
         $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
@@ -124,7 +127,11 @@ class iris_walker_nav_menu extends Walker_Nav_Menu {
         $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
         $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
         $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
-        $attributes .= $item->current               ? ' class="header__menu-item header__menu-item--active"' : ' class="header__menu-item"';
+
+		if( $depth == 0 ){
+			$attributes .= $item->current        	? ' class="header__menu-item header__menu-item--active"' : ' class="header__menu-item"';
+		} 
+		
         $item_output = $args->before;
         $item_output .= '<a'. $attributes .'>';
         $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;

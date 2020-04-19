@@ -77,8 +77,8 @@ if ( post_password_required() ) {
 				</div>
 				<div class="product__action">
 					<?php echo awooc_html_custom_add_to_cart(); ?>
-					<button class="btm btm--action">Забронировать</button>
-					<button class="popup__open btm btm--service">Как забронировать?</button>
+					<!-- <button class="btm btm--action">Забронировать</button> -->
+					<button class="popup__open btm btm--service" onclick="toggleInfoPopup('infoPopup')">Как забронировать?</button>
 				</div>
 			</div>
 		</section>
@@ -100,7 +100,7 @@ if ( post_password_required() ) {
 		<?php endif; ?>
 	</div>
 </main>
-<div class="popup">
+<div class="popup" id="infoPopup">
 	<div class="popup__iner">
 		<div class="popup__title">
 			<div class="title__iner">

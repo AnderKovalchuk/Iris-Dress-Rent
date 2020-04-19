@@ -25,7 +25,7 @@
                 </div>
                 <div class="project__action">
                     <a class="btm btm--action" href="#packages">Забронировать</a>
-                    <a class="popup__open popup__open btm btm--service">Условия бронирования</a>
+                    <a class="popup__open popup__open btm btm--service"  onclick="toggleInfoPopup('infoPopup')">Условия бронирования</a>
                 </div>
             </div>
         </section>
@@ -92,7 +92,7 @@
         </section>
     <?php endif; ?>
 </main>
-<div class="popup">
+<div class="popup" id="infoPopup">
     <div class="popup__iner">
         <div class="popup__title">
             <div class="title__iner">
@@ -119,7 +119,7 @@
     <div class="popup__iner">
         <div class="popup__title">
             <div class="title__iner">
-                <h3 class="title__like-h2">Условия бронирования</h3><span class="title__separator"></span>
+                <h3 class="title__like-h2">Забронировать фотосессию </h3><span class="title__separator"></span>
             </div><a class="popup__close" href="#cloce" onclick="closePopup()">X</a>
         </div>
         <div class="popup__content content-section__content-iner"> 
