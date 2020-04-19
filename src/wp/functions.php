@@ -2,6 +2,33 @@
 add_theme_support( 'widgets' );
 add_theme_support( 'woocommerce' );
 
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Дополнительная информация',
+		'menu_title'	=> 'Дополнительная информация',
+		'menu_slug' 	=> 'iris-add-info',
+		'capability'	=> 'edit_posts',
+		'icon_url' 		=> 'dashicons-admin-generic',
+		'redirect'		=> false
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Фото дни / фото проекты',
+		'menu_title'	=> 'Фото дни / фото проекты',
+		'menu_slug' 	=> 'iris-add-info-project',
+		'parent_slug'	=> 'iris-add-info',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Условия бронирования платья',
+		'menu_title'	=> 'Условия бронирования платья',
+		'menu_slug' 	=> 'iris-add-info-dress',
+		'parent_slug'	=> 'iris-add-info',
+	));
+	
+}
+
 function iris_setup_theme(){
     register_nav_menus(array( 
             'iris-main-menu'    => 'Главное меню',

@@ -1,5 +1,5 @@
-<footer class="footer">
-    <div class="container footer__iner">
+<footer class="container footer">
+    <div class="footer__iner">
         <div class="footer__adress">
             <?php dynamic_sidebar( 'iris_w_adress' ); ?>
         </div>
