@@ -1,0 +1,18 @@
+extends ../layouts/main
+
+
+block variables
+    - var title = 'Каталог';
+    - var pageClass = 'catalog__page';
+    - var mainContentClass = 'catalog__main';
+    - var bread = ['Вопрос / Ответ'];
+    - var pageTitle = 'Вопрос / Ответ';
+
+block main-content
+    .page-404
+        .page-404__iner
+            .title__iner.title__iner--center
+                h2.title__like-h1 404
+                span.title__separator
+                p.title__sub-title Мы не смогли найти страницу, которую вы запрашиваете. Пожалуйста вернитесь на главную.
+            a(href="/").btm.btm--action На главную
