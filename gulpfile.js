@@ -4,6 +4,6 @@ let dev             = require('./gulp/devTask/dev'),
     wpWork          = require('./gulp/deployTask/wpWork');
 
 exports.deploy         = deploy;
-exports.wpWork         = wpWork;
+exports.wpwork         = wpWork;
 exports.dev            = dev;
 exports.build          = build;

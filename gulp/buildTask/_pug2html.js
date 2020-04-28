@@ -7,7 +7,7 @@ module.exports = function pug2html(){
         .pipe(pug({
             pretty: '\t'
         }))
-        .pipe(htmlValidator())
-        .pipe(htmlValidator.reporter())
+        // .pipe(htmlValidator())
+        // .pipe(htmlValidator.reporter())
         .pipe(gulp.dest('./build'))
 }

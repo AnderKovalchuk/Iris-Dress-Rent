@@ -25,7 +25,7 @@ if ( ! empty( $breadcrumb ) ) : ?>
 <div class="navigation">
 	<div class="container">
 		<div class="navigation__title">
-			<h1>Каталог</h1>
+			<h1><?php woocommerce_page_title(); ?></h1>
 		</div>
 		<div class="navigation__bread-crumbs"> 
 			<ul>

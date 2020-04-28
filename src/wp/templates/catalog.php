@@ -5,15 +5,22 @@ Template Name: Каталог
 
 $prod_cat_args = array(
     'taxonomy'    => 'product_cat',
-    'orderby'     => 'id', // здесь по какому полю сортировать
-    'hide_empty'  => false, // скрывать категории без товаров или нет
-    'parent'      => 0 // id родительской категории
+
+    'hide_empty'  => false,
+    'parent'      => 0 
 );
 $woo_categories = get_categories( $prod_cat_args );
 ?>
 
 <?php get_header(); ?> 
-
+<div class="navigation">
+    <div class="container">
+        <div class="navigation__title">
+            <h1> <?php echo esc_html( get_the_title() ); ?> </h1>
+        </div>
+        <?php dimox_breadcrumbs(); ?>
+    </div>
+</div>
 <main class="category__main">
 	<div class="page">
 		<div class="title__iner title__iner--center page__title">

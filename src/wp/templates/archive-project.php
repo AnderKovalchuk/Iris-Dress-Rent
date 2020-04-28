@@ -1,9 +1,17 @@
 <?php get_header(); ?> 
+<div class="navigation">
+    <div class="container">
+        <div class="navigation__title">
+            <h1> Фотодні та фотопроекти </h1>
+        </div>
+        <?php dimox_breadcrumbs(); ?>
+    </div>
+</div>
 <main class="projects__main">
     <div class="container">
         <div class="title__iner title__iner--center page__title">
             <h2 class="title__like-h1 title__like-h1--uppercase">
-            Фотодни и Фотопроекты
+            	Фотодні та фотопроекти
             </h2>
             <span class="title__separator"></span>
         </div>
@@ -21,7 +29,7 @@
 							<?php the_excerpt(); ?>
 						</div>
 						<div class="content-section__footer">
-                            <a class="btm btm--service" href="<?php the_permalink(); ?>">Узнать детальее</a>
+                            <a class="btm btm--service" href="<?php the_permalink(); ?>">Детальніше</a>
 						</div>
 					</div>
 					<div class="projects__image">

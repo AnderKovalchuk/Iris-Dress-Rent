@@ -70,7 +70,7 @@ if ( post_password_required() ) {
 								<?php echo $product->get_attribute( $product_attribute[ 'name' ] );  ?>
 							</li>
 						<?php endforeach; ?>
-						<li><span>Цена: </span> 
+						<li><span>Вартість: </span> 
 							<?php echo $product->price . ' ' . get_option('woocommerce_currency'); ?> 
 						</li>
 					</ul>
@@ -78,7 +78,7 @@ if ( post_password_required() ) {
 				<div class="product__action">
 					<?php echo awooc_html_custom_add_to_cart(); ?>
 					<!-- <button class="btm btm--action">Забронировать</button> -->
-					<button class="popup__open btm btm--service" onclick="toggleInfoPopup('infoPopup')">Как забронировать?</button>
+					<button class="popup__open btm btm--service" onclick="toggleInfoPopup('infoPopup')">Як забронювати?</button>
 				</div>
 			</div>
 		</section>
@@ -104,7 +104,7 @@ if ( post_password_required() ) {
 	<div class="popup__iner">
 		<div class="popup__title">
 			<div class="title__iner">
-				<h3 class="title__like-h2">Условия бронирования платья</h3><span class="title__separator"></span>
+				<h3 class="title__like-h2">Умови бронювання суконь</h3><span class="title__separator"></span>
 			</div><a class="popup__close" href="#cloce">X</a>
 		</div>
 		<div class="popup__content content-section__content-iner">   

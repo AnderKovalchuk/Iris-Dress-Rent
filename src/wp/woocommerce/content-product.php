@@ -27,8 +27,9 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
 <div class="cart__iner">
 	<a href="<?php echo get_permalink( $product->id); ?>">
-		<figure class="cart__image">
+		<figure class="cart__image cart__image--not-bottom-radius">
 			<img src="<?php echo wp_get_attachment_image_url( $product->image_id,  'large' ); ?>" alt=""/>
 		</figure>
+		<h3 class="cart__title"> <?php echo $product->name; ?> </h3>
 	</a>
 </div>

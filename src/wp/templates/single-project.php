@@ -1,4 +1,12 @@
 <?php get_header(); ?> 
+<div class="navigation">
+    <div class="container">
+        <div class="navigation__title">
+            <h1> <?php echo esc_html( get_the_title() ); ?> </h1>
+        </div>
+        <?php dimox_breadcrumbs(); ?>
+    </div>
+</div>
 <?php the_post(); ?>
 <main class="project__main">
     <div class="container--small">
@@ -24,15 +32,15 @@
                     <?php the_content(); ?>
                 </div>
                 <div class="project__action">
-                    <a class="btm btm--action" href="#packages">Забронировать</a>
-                    <a class="popup__open popup__open btm btm--service"  onclick="toggleInfoPopup('infoPopup')">Условия бронирования</a>
+                    <a class="btm btm--action" href="#packages">Забронювати</a>
+                    <a class="popup__open popup__open btm btm--service"  onclick="toggleInfoPopup('infoPopup')">Умови бронювання</a>
                 </div>
             </div>
         </section>
         <?php if( $video = get_field('pdpp_video') ) : ?>
             <section class="section project__video">
                 <div class="title__iner title__iner--center project__title">
-                    <h2 class="title__like-h2">Видео</h2><span class="title__separator"></span>
+                    <h2 class="title__like-h2">Відео</h2><span class="title__separator"></span>
                 </div>
                 <iframe src="<?php echo $video; ?>" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </section>
@@ -76,14 +84,14 @@
 
                         <?php if( $service_price = get_sub_field('pdpp_service_price') ) : ?>
                             <div class="project__price">
-                                <p><span>Стоимость: </span> <?php echo $service_price; ?> </p>
+                                <p><span>Вартість: </span> <?php echo $service_price; ?> </p>
                             </div>
                         <?php endif; ?>
 
                         <div class="project__action">
                             <button class="btm btm--action"
                                 onclick="openPopup('<?php echo the_title() . ' Пакет: ' . get_sub_field('pdpp_service_name'); ?>')">
-                                Забронировать
+                                Забронювати
                             </button>
                         </div>
                     </div>
@@ -96,7 +104,7 @@
     <div class="popup__iner">
         <div class="popup__title">
             <div class="title__iner">
-                <h3 class="title__like-h2">Условия бронирования</h3><span class="title__separator"></span>
+                <h3 class="title__like-h2">Умови бронювання</h3><span class="title__separator"></span>
             </div><a class="popup__close" href="#cloce">X</a>
         </div>
         <div class="popup__content content-section__content-iner"> 
