@@ -19,3 +19,39 @@
         color: #fff
         background-color: $accent-color
 
+.woocommerce-pagination
+    display: flex
+    justify-content: center
+    margin-top: 15px
+    text-align: center
+    .page-numbers
+        list-style: none
+        display: flex
+        li
+            margin: 0 5px
+        a, span
+            display: inline-flex
+            width: 25px
+            height: 25px
+            align-items: center
+            justify-content: center
+            border: 1px solid $border-color
+            text-decoration: none
+            color: $main-color
+        span
+            font-weight: bold
+
+.wpcf7
+    
+    &-not-valid-tip
+        display: block
+        padding: 5px 0
+        font-size: 0.8rem
+        font-weight: bold
+        text-align: center
+        color: #fff
+        background-color: $accent-color
+    &-validation-errors
+        background-color: $border-color
+        border-color: $accent-color
+

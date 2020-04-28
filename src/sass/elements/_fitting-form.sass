@@ -4,13 +4,20 @@
     gap: 15px
     max-width: 700px
     margin: 30px auto 0 auto
+    align-items: center
     &--col-1
         grid-template-columns: 1fr
-
+    
+    select
+        width: 100%
+    label
+        display: block
+        text-align: center
+        color: #757575
     input:not([type="submit"])
         width: 100%
         text-align: center
-        background-color: transparent
+        //background-color: transparent
     input[type="submit"]
         align-self: flex-end
     textarea
