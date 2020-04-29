@@ -65,3 +65,15 @@
 		<div class="header__mobile-burger-iner"><span></span></div>
 	</div>
 </header>
+<div class="navigation">
+    <div class="container">
+        <div class="navigation__title">
+            <?php if( is_post_type_archive() ) : ?>
+                <h1> <?php echo post_type_archive_title(); ?> </h1>
+            <?php else : ?>
+                <h1> <?php echo esc_html( get_the_title() ); ?> </h1>
+            <?php endif; ?>
+        </div>
+        <?php dimox_breadcrumbs(); ?>
+    </div>
+</div>
