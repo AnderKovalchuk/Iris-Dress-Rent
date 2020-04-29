@@ -1,12 +1,5 @@
-<?php get_header(); ?> 
-<div class="navigation">
-    <div class="container">
-        <div class="navigation__title">
-            <h1> Фотодні та фотопроекти </h1>
-        </div>
-        <?php dimox_breadcrumbs(); ?>
-    </div>
-</div>
+<?php get_header('page'); ?> 
+
 <main class="projects__main">
     <div class="container">
         <div class="title__iner title__iner--center page__title">

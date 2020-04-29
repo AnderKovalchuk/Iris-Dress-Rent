@@ -1,13 +1,4 @@
-<?php get_header(); ?> 
-
-<div class="navigation">
-    <div class="container">
-        <div class="navigation__title">
-            <h1> <?php echo esc_html( get_the_title() ); ?> </h1>
-        </div>
-        <?php dimox_breadcrumbs(); ?>
-    </div>
-</div>
+<?php get_header('page'); ?> 
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <main class="page">
@@ -22,11 +13,6 @@
             <?php echo the_content(); ?>
         </div>
     </main>
-<?php endwhile; else: ?>
-	Записей нет.
-<?php endif; ?>
-
-
-
+<?php endwhile; endif; ?>
 
 <?php get_footer(); ?>
