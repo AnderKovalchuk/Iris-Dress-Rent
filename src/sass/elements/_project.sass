@@ -67,7 +67,12 @@
             font-weight: 900
    
     &__action
-        display: flex
+        display: flex   
+        +m-table()
+            flex-wrap: wrap
+            justify-content: center
+            .btm
+                margin-bottom: 15px
         .btm
             font-size: 1rem
         .btm--service

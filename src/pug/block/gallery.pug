@@ -1,3 +1,4 @@
 mixin gallery-product(img= '')
     figure.gallery__image
-        img(src= img, alt="")
+        a(href= img)
+            img(src= img, alt="")

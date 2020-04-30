@@ -38,8 +38,9 @@ window.addEventListener('load', () => {
 
     (function(){
         let checkboxEl  = d.querySelectorAll('.calc__argument-row');
-        if(!checkboxEl)
+        if(checkboxEl.length <= 0)
             return;
+        console.log(checkboxEl);
         for(let i = 0; i < checkboxEl.length; i++){
             let checkbox = checkboxEl[i].querySelector('input[type=checkbox]');
             let label = checkboxEl[i].querySelector('.calc__checkbox');
@@ -89,6 +90,39 @@ window.addEventListener('load', () => {
         packageEl.addEventListener('change', e => {
             updatePackage();
         });
+    }());
+
+    (function(){
+        let gallery = d.querySelector('.gallery__iner');
+        if(!gallery) 
+            return;
+        
+        gallery.addEventListener('click', e => {
+            let thumbnail = e.target.closest('a');
+            if(!thumbnail)
+                return;
+            console.log(thumbnail);
+            openGalleryPopup(thumbnail.href);
+            e.preventDefault();
+        });
+
+        let close = document.querySelector('.gallery__close');
+        close.addEventListener('click', e => {
+            openGalleryPopup('');
+        });
+
+            // thumbs.onclick = function(event) {
+            //     let thumbnail = event.target.closest('a');
+          
+            //     if (!thumbnail) return;
+            //     showThumbnail(thumbnail.href, thumbnail.title);
+            //     event.preventDefault();
+            //   }
+          
+            //   function showThumbnail(href, title) {
+            //     largeImg.src = href;
+            //     largeImg.alt = title;
+            //   }
     }());
 });
 
@@ -154,6 +188,8 @@ function updatePrice(){
         price += priceItem.getPrice();
     }
     let priceEl  = document.getElementById('price');
+    if(!priceEl)
+        return;
     priceEl.innerHTML = price + '<span> грн. </span>';
 }
 
@@ -203,5 +239,11 @@ function send(){
     console.log( string );
 }
 
+function openGalleryPopup(image){
+    let galleryPopup = document.querySelector('.gallery__popup');
+    galleryPopup.classList.toggle('active');
+    galleryPopup.querySelector('img').setAttribute('src', image);
+    document.body.classList.toggle('body--hidden');
+}
 
 
