@@ -1,0 +1,59 @@
+extends ../layouts/main
+
+include ../block/btm
+include ../common/navigation
+include ../block/gallery
+include ../block/popup
+
+block variables
+    - var title = 'Калькулятор - Фотодни и Фотопроекты';
+    - var pageClass = 'calculator__page';
+    - var mainContentClass = 'calculator__main';
+
+block before-main-content
+    +navigation('Фотодни и Фотопроекты', ['Фотодни и Фотопроекты'])
+
+block main-content
+    .container--small.calc
+        .section.title__iner.title__iner--center
+            h2.title__like-h1.title__like-h1--uppercase Пакет
+            span.title__separator
+        .section.calc__iner
+            .calc__package-row
+                .calc__package
+                    label(for="package_1") #[span Light] 1 година
+                        input#package_1(type="radio", name="package", value="1", checked)
+                .calc__package
+                    label(for="package_2") #[span GOLD]  2 година
+                        input#package_2(type="radio", name="package", value="2")
+            section.calc__price
+                h3 Ціна 
+                .title__separator
+                p#price 0
+
+            .calc__arguments
+                .calc__argument-row
+                    label(for="switch1").calc__checkbox.active #[span ] Додаткові сукні 
+                        input(type="checkbox" id="switch1" data-price="700" data-count="1" data-current="" data-depend="true" checked)
+                    label(for="switch-num").calc__number
+                        span.calc__pulse +
+                        input(type="number", id="switch-num" min="1" max="20")
+                        span.calc__minuse -
+                +checkbox-row('Оренда фотостудії', 200, 2)
+                +checkbox-row('Фотограф', 2000, 3)
+                +checkbox-row('Макіяж', 200, 4)
+                .calc__argument-row
+                    label(for="switch-5" + num).calc__checkbox  #[span ] Укладка
+                        input(type="checkbox" id="switch-5" + num data-price="200" data-current="0" data-depend="true")
+                +checkbox-row('Додаткова ретуш', 300, 6)
+                +checkbox-row('Прискорена обробка фотографій', 1100, 7)
+                +checkbox-row('Запис фото на флешку', 1000, 8)
+                +checkbox-row('Фотокнига', 1500, 9)
+            .calc__action
+                button.btm.btm--action(onclick="send()") Забронювати
+
+
+mixin checkbox-row(labelText, price, num)
+    .calc__argument-row
+        label(for="switch-" + num).calc__checkbox  #[span ] #{labelText}
+            input(type="checkbox" id="switch-" + num data-price= price data-current="0")

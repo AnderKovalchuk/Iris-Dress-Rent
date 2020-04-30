@@ -1,0 +1,161 @@
+.calc
+    font-size: 1rem
+    &__iner
+        position: relative
+        display: grid
+        grid-template-columns: 0.7fr 1fr
+        grid-template-areas: "package arguments" "price arguments" "action arguments" ". arguments"
+        gap: 2em
+        z-index: 2
+        +m-table()
+            grid-template-columns: 1fr
+            grid-template-rows: 1fr
+            grid-template-areas: "package" "price" "arguments" "action"
+            gap: 1em
+            padding-top: 0
+    &__package-row
+        grid-area: package
+        display: grid
+        gap: 1em
+        grid-template-columns: 1fr 1fr
+    &__package
+        border: 1px solid $border-color
+        border-radius: 3px
+        label
+            display: block
+            padding: 10px
+            text-align: center
+            span
+                display: block
+                font-family: $title-font
+                font-size: 1.5em
+        input
+            display: none
+        &--active
+            background-color: $help-color
+            box-shadow: 0 0 7px rgba(#ffcbde,.5)
+    
+
+    &__price
+        grid-area: price
+        max-width: 350px
+        margin: 0 auto
+        padding: 1.5em 4em
+        font-family: $title-font
+        border: 1px solid $border-color
+        z-index: 5
+        +m-table()
+            position: sticky
+            top: 0px
+            max-width: 100%
+            width: 100%
+            display: flex
+            justify-content: space-between
+            padding: 1em
+            border-left: none
+            border-right: none
+            background-color: #fff
+        h3
+            font-size: 1.5em
+            text-align: center
+            text-transform: uppercase
+        .title__separator
+            margin: 0 auto
+            +m-table()
+                display: none
+        p
+            font-size: 2em
+            text-align: center
+            +m-table()
+                font-size: 1.5em
+    &__arguments
+        grid-area: arguments
+    &__action
+        grid-area: action
+        text-align: center
+
+    &__argument-row
+        display: flex
+        margin-bottom: 1em
+        
+    &__checkbox
+        width: 100%
+        display: flex
+        align-items: center
+        padding: 10px 15px
+        border: 1px solid $border-color
+        border-radius: 3px
+        cursor: pointer
+        font-size: 1.1em
+        input
+            visibility: hidden
+        span
+            display: inline-block
+            width: 36px
+            height: 20px       
+            margin-right: 15px
+            flex-shrink: 0
+            cursor: pointer
+            text-indent: -9999px
+            background-color: $border-color
+            
+            border-radius: 100px
+            position: relative
+            //box-shadow: inset 0 0 0px 10px $border-color
+            transition: 0.35s ease
+            &::after
+                content: ''
+                position: absolute
+                top: 1px
+                left: 1px
+                width: 18px
+                height: 18px
+                background: #fff
+                border-radius: 90px
+                transition: 0.3s
+        &.active
+            span
+                background-color: #FFCBDE
+                &::after
+                    left: 100%
+                    transform: translateX(-100%) translate(-1px,0)
+    &__number
+        width: 30%
+        display: flex
+        align-items: center
+        justify-content: center
+        margin-left: 15px
+        padding: 10px 15px
+        border: 1px solid $border-color
+        +m-table()
+            width: 40%
+        span
+            display: inline-flex
+            align-items: center
+            justify-content: center
+            width: 18px
+            height: 18px
+            flex-shrink: 0
+            font-size: 1.2em
+            color: #333
+            background: #FFD8E6
+            border-radius: 100%
+            cursor: pointer
+        input
+            width: 40px
+            margin: 0 0.5em
+            padding: 5px
+            text-align: center
+            border: 1px solid $border-color
+            border-radius: 3px
+            outline: none
+            -moz-appearance: textfield
+            
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button 
+                -webkit-appearance: none
+                margin: 0
+
+    &__minuse
+        padding-bottom: 2px
+
