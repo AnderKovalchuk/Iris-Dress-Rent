@@ -21,42 +21,42 @@ block main-content
             .awooc-col.columns-right.awooc-col-full
                 #wpcf7-f1430-o1.wpcf7(role='form', lang='en-US', dir='ltr')
                     .title__iner.title__iner--center
-                        h2.title__like-h2 &Zcy;&acy;&bcy;&rcy;&ocy;&ncy;&yucy;&vcy;&acy;&tcy;&icy; &scy;&ucy;&kcy;&ncy;&yucy;
+                        h2.title__like-h2 Забронювати сукню
                         p.title__separator
                     .fitting-form
                         span.wpcf7-form-control-wrap.awooc-text
                             input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required.form__text.wpcf7-not-valid(type='text', name='awooc-text', value='', size='40', aria-required='true', aria-invalid='true', placeholder="Ваше ім'я")
-                            span.wpcf7-not-valid-tip(role='alert') &Pcy;&ocy;&lcy;&iecy; &ocy;&bcy;&yacy;&zcy;&acy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy; &dcy;&lcy;&yacy; &zcy;&acy;&pcy;&ocy;&lcy;&ncy;&iecy;&ncy;&icy;&yacy;.
+                            span.wpcf7-not-valid-tip(role='alert') Поле обов'язкове для заповнення
                         span.wpcf7-form-control-wrap.awooc-email
                             input.wpcf7-form-control.wpcf7-text.wpcf7-email.wpcf7-validates-as-required.wpcf7-validates-as-email.form__text.wpcf7-not-valid(type='email', name='awooc-email', value='', size='40', aria-required='true', aria-invalid='true', placeholder='Ваш Е-Мail')
-                            span.wpcf7-not-valid-tip(role='alert') &Pcy;&ocy;&lcy;&iecy; &ocy;&bcy;&yacy;&zcy;&acy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy; &dcy;&lcy;&yacy; &zcy;&acy;&pcy;&ocy;&lcy;&ncy;&iecy;&ncy;&icy;&yacy;.
+                            span.wpcf7-not-valid-tip(role='alert') Поле обов'язкове для заповнення
                         span.wpcf7-form-control-wrap.awooc-tel
                             input.wpcf7-form-control.wpcf7-text.wpcf7-tel.wpcf7-validates-as-required.wpcf7-validates-as-tel.form__text.wpcf7-not-valid(type='tel', name='awooc-tel', value='', size='40', aria-required='true', aria-invalid='true', placeholder='Номер телефону')
-                            span.wpcf7-not-valid-tip(role='alert') &Pcy;&ocy;&lcy;&iecy; &ocy;&bcy;&yacy;&zcy;&acy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy; &dcy;&lcy;&yacy; &zcy;&acy;&pcy;&ocy;&lcy;&ncy;&iecy;&ncy;&icy;&yacy;.
+                            span.wpcf7-not-valid-tip(role='alert') Поле обов'язкове для заповнення
                         div
                             label(for='awooc-zad') &Zcy;&acy;&dcy;&acy;&tcy;&ocy;&kcy;
                             span.wpcf7-form-control-wrap.awooc-zad
-                                select.wpcf7-form-control.wpcf7-select.wpcf7-validates-as-required(name='awooc-zad' aria-required='true' aria-invalid='false')
-                                    option(value='Громадянський паспорт') &Gcy;&rcy;&ocy;&mcy;&acy;&dcy;&yacy;&ncy;&scy;&softcy;&kcy;&icy;&jcy; &pcy;&acy;&scy;&pcy;&ocy;&rcy;&tcy;
-                                    option(value='Закордонний паспорт') &Zcy;&acy;&kcy;&ocy;&rcy;&dcy;&ocy;&ncy;&ncy;&icy;&jcy; &pcy;&acy;&scy;&pcy;&ocy;&rcy;&tcy;
-                                    option(value='Водійське посвідчення') &Vcy;&ocy;&dcy;&iukcy;&jcy;&scy;&softcy;&kcy;&iecy; &pcy;&ocy;&scy;&vcy;&iukcy;&dcy;&chcy;&iecy;&ncy;&ncy;&yacy;
-                                    option(value='Грошовий завдаток(від 1500 грн)') &Gcy;&rcy;&ocy;&shcy;&ocy;&vcy;&icy;&jcy; &zcy;&acy;&vcy;&dcy;&acy;&tcy;&ocy;&kcy;(&vcy;&iukcy;&dcy; 1500 &gcy;&rcy;&ncy;)
+                                select.wpcf7-form-control.wpcf7-select.wpcf7-validates-as-required(id="awooc-zad" name='awooc-zad' aria-required='true' aria-invalid='false')
+                                    option(value='Громадянський паспорт') Громадянський паспорт
+                                    option(value='Закордонний паспорт') Закордонний паспорт
+                                    option(value='Водійське посвідчення') Водійське посвідчення
+                                    option(value='Грошовий завдаток(від 1500 грн)') Грошовий завдаток(від 1500 грн)
 
                         div
-                            label Дата фотосесії
+                            label(for="date-82") Дата фотосесії
                             span.wpcf7-form-control-wrap.date-82
-                                input.wpcf7-form-control.wpcf7-date.wpcf7-validates-as-date(type='date', name='date-82', value='', aria-invalid='false')
+                                input.wpcf7-form-control.wpcf7-date.wpcf7-validates-as-date(id="date-82" type='text' name='date-82' value='' aria-invalid='false')
                         div
-                            label Час фотосесії
-                            span.wpcf7-form-control-wrap.date-82
-                                input.wpcf7-form-control.wpcf7-text.form__text(type='text', name='awooc-date', value='', size='40', aria-invalid='false', placeholder='ГГ:ХХ')
+                            label(for="date-83") Час фотосесії
+                            span.wpcf7-form-control-wrap.date-83
+                                input.wpcf7-form-control.wpcf7-text.form__text(type='text' id="date-83" name='date-83' value='' size='40' aria-invalid='false' placeholder='ГГ:ХХ')
 
 
                         span.wpcf7-form-control-wrap.your-message
-                            textarea.wpcf7-form-control.wpcf7-textarea.form__text(name='your-message', cols='40', rows='10', aria-invalid='false') &Fcy;&ocy;&tcy;&ocy;&gcy;&rcy;&acy;&fcy; (&pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy; &ncy;&acy; &scy;&ocy;&tscy;&iukcy;&acy;&lcy;&softcy;&ncy;&iukcy; &mcy;&iecy;&rcy;&iecy;&zhcy;&iukcy;)
+                            textarea.wpcf7-form-control.wpcf7-textarea.form__text(name='your-message' cols='40' rows='10' aria-invalid='false' placeholder="Фотограф (посилання на соціальні мережі)")
                         span.wpcf7-form-control-wrap.your-message
-                            textarea.wpcf7-form-control.wpcf7-textarea.form__text(name='your-message', cols='40', rows='10', aria-invalid='false') &Fcy;&ocy;&tcy;&ocy;&scy;&tcy;&ucy;&dcy;&iukcy;&yacy; (&ncy;&acy;&zcy;&vcy;&acy; &tcy;&acy; &lcy;&ocy;&kcy;&acy;&tscy;&iukcy;&yacy;)
-                        input.wpcf7-form-control.wpcf7-submit.btm.btm--action(type='submit', value='Забронювати')
+                            textarea.wpcf7-form-control.wpcf7-textarea.form__text(name='your-message' cols='40' rows='10' aria-invalid='false' placeholder="Фотостудія (назва та локація)" )
+                        input.wpcf7-form-control.wpcf7-submit.btm.btm--action(type='submit' value='Забронювати')
                         
                         span.ajax-loader
                     p
@@ -64,9 +64,7 @@ block main-content
                         input.awooc-hidden-product-id(type='hidden', name='awooc_product_id', value='1361')
                         input.awooc-hidden-product-qty(type='hidden', name='awooc_product_qty', value='')
                     .wpcf7-response-output.wpcf7-display-none.wpcf7-validation-errors(style='display: block;', role='alert')
-                        | &Ocy;&dcy;&ncy;&ocy; &icy;&lcy;&icy; &ncy;&iecy;&scy;&kcy;&ocy;&lcy;&softcy;&kcy;&ocy; &pcy;&ocy;&lcy;&iecy;&jcy; &scy;&ocy;&dcy;&iecy;&rcy;&zhcy;&acy;&tcy; &ocy;&shcy;&icy;&bcy;&ocy;&chcy;&ncy;&ycy;&iecy; &dcy;&acy;&ncy;&ncy;&ycy;&iecy;. &Pcy;&ocy;&zhcy;&acy;&lcy;&ucy;&jcy;&scy;&tcy;&acy;, &pcy;&rcy;&ocy;&vcy;&iecy;&rcy;&softcy;&tcy;&iecy; &icy;&khcy; &icy; &pcy;&ocy;&pcy;&rcy;&ocy;&bcy;&ucy;&jcy;&tcy;&iecy;
-                        | &iecy;&shchcy;&iocy; &rcy;&acy;&zcy;.
-
+                        p В полях містяться помилкові данні. Будь ласка, перевірте правильність заповнення форми.
 
     section.sec.container
         .title__iner.content-section__title
