@@ -15,6 +15,57 @@ block main-content
         figure
             img(src="img/home_img.jpg", alt="")
 
+
+    .page
+        .section
+            .awooc-col.columns-right.awooc-col-full
+                #wpcf7-f1430-o1.wpcf7(role='form', lang='en-US', dir='ltr')
+                    .title__iner.title__iner--center
+                        h2.title__like-h2 Забронювати сукню
+                        p.title__separator
+                    .fitting-form
+                        span.wpcf7-form-control-wrap.awooc-text
+                            input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required.form__text.wpcf7-not-valid(type='text', name='awooc-text', value='', size='40', aria-required='true', aria-invalid='true', placeholder="Ваше ім'я")
+                            span.wpcf7-not-valid-tip(role='alert') Поле обов'язкове для заповнення
+                        span.wpcf7-form-control-wrap.awooc-email
+                            input.wpcf7-form-control.wpcf7-text.wpcf7-email.wpcf7-validates-as-required.wpcf7-validates-as-email.form__text.wpcf7-not-valid(type='email', name='awooc-email', value='', size='40', aria-required='true', aria-invalid='true', placeholder='Ваш Е-Мail')
+                            span.wpcf7-not-valid-tip(role='alert') Поле обов'язкове для заповнення
+                        span.wpcf7-form-control-wrap.awooc-tel
+                            input.wpcf7-form-control.wpcf7-text.wpcf7-tel.wpcf7-validates-as-required.wpcf7-validates-as-tel.form__text.wpcf7-not-valid(type='tel', name='awooc-tel', value='', size='40', aria-required='true', aria-invalid='true', placeholder='Номер телефону')
+                            span.wpcf7-not-valid-tip(role='alert') Поле обов'язкове для заповнення
+                        div
+                            label(for='awooc-zad') &Zcy;&acy;&dcy;&acy;&tcy;&ocy;&kcy;
+                            span.wpcf7-form-control-wrap.awooc-zad
+                                select.wpcf7-form-control.wpcf7-select.wpcf7-validates-as-required(id="awooc-zad" name='awooc-zad' aria-required='true' aria-invalid='false')
+                                    option(value='Громадянський паспорт') Громадянський паспорт
+                                    option(value='Закордонний паспорт') Закордонний паспорт
+                                    option(value='Водійське посвідчення') Водійське посвідчення
+                                    option(value='Грошовий завдаток(від 1500 грн)') Грошовий завдаток(від 1500 грн)
+
+                        div
+                            label(for="date-82") Дата фотосесії
+                            span.wpcf7-form-control-wrap.date-82
+                                input.wpcf7-form-control.wpcf7-date.wpcf7-validates-as-date(id="date-82" type='text' name='date-82' value='' aria-invalid='false')
+                        div
+                            label(for="date-83") Час фотосесії
+                            span.wpcf7-form-control-wrap.date-83
+                                input.wpcf7-form-control.wpcf7-text.form__text(type='text' id="date-83" name='date-83' value='' size='40' aria-invalid='false' placeholder='ГГ:ХХ')
+
+
+                        span.wpcf7-form-control-wrap.your-message
+                            textarea.wpcf7-form-control.wpcf7-textarea.form__text(name='your-message' cols='40' rows='10' aria-invalid='false' placeholder="Фотограф (посилання на соціальні мережі)")
+                        span.wpcf7-form-control-wrap.your-message
+                            textarea.wpcf7-form-control.wpcf7-textarea.form__text(name='your-message' cols='40' rows='10' aria-invalid='false' placeholder="Фотостудія (назва та локація)" )
+                        input.wpcf7-form-control.wpcf7-submit.btm.btm--action(type='submit' value='Забронювати')
+                        
+                        span.ajax-loader
+                    p
+                        span.wpcf7-form-control-wrap.awooc-hidden-data
+                        input.awooc-hidden-product-id(type='hidden', name='awooc_product_id', value='1361')
+                        input.awooc-hidden-product-qty(type='hidden', name='awooc_product_qty', value='')
+                    .wpcf7-response-output.wpcf7-display-none.wpcf7-validation-errors(style='display: block;', role='alert')
+                        p В полях містяться помилкові данні. Будь ласка, перевірте правильність заповнення форми.
+
     section.sec.container
         .title__iner.content-section__title
             span.title__sub-title Прокат уникальных платьев ручной работы
