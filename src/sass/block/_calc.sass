@@ -3,7 +3,7 @@
     &__iner
         position: relative
         display: grid
-        grid-template-columns: 0.7fr 1fr
+        grid-template-columns: 0.9fr 1fr
         grid-template-areas: "package arguments" "price arguments" "action arguments" ". arguments"
         gap: 2em
         z-index: 2
@@ -38,9 +38,10 @@
 
     &__price
         grid-area: price
+        width: 100%
         max-width: 350px
         margin: 0 auto
-        padding: 1.5em 4em
+        padding: 2em 4em    
         font-family: $title-font
         border: 1px solid $border-color
         z-index: 5
@@ -48,7 +49,6 @@
             position: sticky
             top: 0px
             max-width: 100%
-            width: 100%
             display: flex
             justify-content: space-between
             padding: 1em
@@ -81,6 +81,7 @@
         margin-bottom: 1em
         
     &__checkbox
+        position: relative
         width: 100%
         display: flex
         align-items: center
@@ -91,7 +92,7 @@
         font-size: 1.1em
         input
             visibility: hidden
-        span
+        .check
             display: inline-block
             width: 36px
             height: 20px       
@@ -116,7 +117,7 @@
                 border-radius: 90px
                 transition: 0.3s
         &.active
-            span
+            .check 
                 background-color: #FFCBDE
                 &::after
                     left: 100%
@@ -161,3 +162,26 @@
     &__minuse
         padding-bottom: 2px
 
+    &__info
+        margin-left: auto
+        font-size: 0.8em
+        &:hover > div
+            display: block
+    &__info-block
+        position: absolute
+        display: none
+        left: -1px
+        width: calc( 100% + 2px )
+        margin-top: 10px
+        padding: 5px 10px
+        background-color: #FFD8E6
+        z-index: 10
+        border-radius: 0 0 5px 5px
+    &__info-icon
+        display: block
+        margin-left: auto
+        padding: 0 7px  
+        font-size: 10px
+        background-color: #FFD8E6
+        border-radius: 50%
+        
