@@ -1,0 +1,30 @@
+include ../includes/main-menu-item
+
+mixin header-base(isHome)
+    - var headerClass = isHome ? 'header header--home' : 'header'
+    header(class = headerClass)
+        .container.header__iner
+            .header__logo
+                a(href="/")
+                    figure
+                        img(src="img/logo-s.jpg", alt="Iris")
+            nav.header__nav-list
+                ul.header__main-nav
+                    +main-menu-item('Главная','/').header__menu-item--active
+                    +main-menu-item('Каталог','category.html')
+                    +main-menu-item('Фотодни и Фотопроекты','projects.html')
+                    +main-menu-item('О нас','contact.html')
+                        ul.header__sub-menu
+                            li
+                                a(href='#') Контакты
+                            li
+                                a(href='#') Подарочные сертификаты
+                .header__lang
+                    span.header__menu-item UA
+                    ul.header__lang-list
+                        li.header__lang-item
+                            a(href="/") RU
+                        li.header__lang-item.header__lang-item--active
+                            a(href="/") UA
+            .header__mobile-burger-iner
+                span

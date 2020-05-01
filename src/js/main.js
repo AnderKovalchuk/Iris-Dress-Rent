@@ -2,6 +2,7 @@
 
 let priceItems = new Map();
 let packagePrice = '';
+let packageName = 'light';
 
 window.addEventListener('load', () => {
     const d = document;
@@ -39,50 +40,46 @@ window.addEventListener('load', () => {
     (function(){
         let checkboxEl  = d.querySelectorAll('.calc__argument-row');
         if(checkboxEl.length <= 0)
-            return;
-        console.log(checkboxEl);
+            return;      
+        priceItems.set(
+            'base-price', 
+            new PriceItem(
+                800, 1, true, false
+            )
+        );
         for(let i = 0; i < checkboxEl.length; i++){
             let checkbox = checkboxEl[i].querySelector('input[type=checkbox]');
             let label = checkboxEl[i].querySelector('.calc__checkbox');
             let number = checkboxEl[i].querySelector('input[type=number]');
-            
-            priceItems.set(
-                checkbox.getAttribute('id'), 
-                new PriceItem(
-                    checkbox.getAttribute('data-price'),
-                    checkbox.getAttribute('data-count'),
-                    checkbox.checked,
-                    checkbox.getAttribute('data-depend')
-                )
-            );
+            let item = new PriceItem();
+
+            item.price = checkbox.getAttribute('data-price');
+            item.priseGold = checkbox.getAttribute('data-price-gold');
 
             checkbox.addEventListener('change', e => {
-                updateCheckbox(checkbox, number, label);
+                updateCheckbox(item, checkbox, label, number);
             });
 
-            if(!number)
-                continue;
+            if(number){
+                if(checkbox.checked)
+                    number.disabled = false;
+                else
+                    number.disabled = true;
+                item.count = number.value;
 
-            number.value = checkbox.getAttribute('data-count');
-            if(checkbox.checked)
-                number.disabled = false;
-            else
-                number.disabled = true;
-            number.addEventListener('change', e => {
-                updateCheckbox(checkbox, number, label);
-            });
+                let pulse = checkboxEl[i].querySelector('.calc__pulse');
+                let minuse = checkboxEl[i].querySelector('.calc__minuse');
 
-            let pulse = checkboxEl[i].querySelector('.calc__pulse');
-            let minuse = checkboxEl[i].querySelector('.calc__minuse');
-
-            pulse.addEventListener('click', e => {
-                updateNumber(number, true);
-                updateCheckbox(checkbox, number, label);
-            });
-            minuse.addEventListener('click', e => {
-                updateNumber(number, false);
-                updateCheckbox(checkbox, number, label);
-            });
+                pulse.addEventListener('click', e => {
+                    if(checkbox.checked)
+                        updateNumber(item, number, true);
+                });
+                minuse.addEventListener('click', e => {
+                    if(checkbox.checked)
+                        updateNumber(item, number, false);
+                });
+            }
+            priceItems.set(checkbox.getAttribute('id'), item); 
         }
 
         updatePackage();
@@ -101,7 +98,6 @@ window.addEventListener('load', () => {
             let thumbnail = e.target.closest('a');
             if(!thumbnail)
                 return;
-            console.log(thumbnail);
             openGalleryPopup(thumbnail.href);
             e.preventDefault();
         });
@@ -110,61 +106,51 @@ window.addEventListener('load', () => {
         close.addEventListener('click', e => {
             openGalleryPopup('');
         });
-
-            // thumbs.onclick = function(event) {
-            //     let thumbnail = event.target.closest('a');
-          
-            //     if (!thumbnail) return;
-            //     showThumbnail(thumbnail.href, thumbnail.title);
-            //     event.preventDefault();
-            //   }
-          
-            //   function showThumbnail(href, title) {
-            //     largeImg.src = href;
-            //     largeImg.alt = title;
-            //   }
     }());
 });
 
-function PriceItem(price, count, isActive, isDepend){
+function PriceItem(price, count, isActive, priseGold){
     this.price = price;
     if(count)
         this.count = count;
     else
         this.count = 1;
     this.isActive = isActive;
-    this.isDepend = isDepend;
+    this.priseGold = priseGold;
 
     this.getPrice = function(){
         if(!this.isActive)
             return 0
-        if(isDepend)
-            return this.price * this.count * packagePrice;
+        if(packageName == 'gold' && this.priseGold)
+            return this.priseGold * this.count;
         return this.price * this.count;
     }
 }
-function updateCheckbox(checkbox, number, checkboxLabel){
+function updateCheckbox(item, checkbox, checkboxLabel, number){
+    if(checkbox.checked)
+        checkboxLabel.classList.add('active');
+    else
+        checkboxLabel.classList.remove('active');
     if(number){
-        checkbox.setAttribute('data-count', number.value);
         if(checkbox.checked)
             number.disabled = false;
         else
             number.disabled = true;
     }
-    if(checkbox.checked)
-        checkboxLabel.classList.add('active');
-    else
-        checkboxLabel.classList.remove('active');
+    item.isActive = checkbox.checked;
 
-    priceItems.set(
-        checkbox.getAttribute('id'), 
-        new PriceItem(
-            checkbox.getAttribute('data-price'),
-            checkbox.getAttribute('data-count'),
-            checkbox.checked,
-            checkbox.getAttribute('data-depend')
-        )
-    );
+    updatePrice();
+}
+function updateNumber(item, number, isPluse){
+    let num = number.value;
+    if(isPluse)
+        num++;
+    else
+        num--;
+    if(num >= 1 && num <= 10){
+        number.value = num;
+        item.count = num;
+    }
     updatePrice();
 }
 function updatePackage(){
@@ -173,7 +159,7 @@ function updatePackage(){
     for(let i = 0; i < packageEl.length; i++){
         let radio = packageEl[i].querySelector('input[type=radio]');
         if(radio.checked){
-            packagePrice = radio.value;
+            packageName = radio.value;
             packageEl[i].classList.add('calc__package--active');
         } else {
             packageEl[i].classList.remove('calc__package--active');
@@ -193,16 +179,6 @@ function updatePrice(){
     priceEl.innerHTML = price + '<span> грн. </span>';
 }
 
-function updateNumber(number, isPluse){
-    let num = number.value;
-    if(isPluse)
-        num++;
-    else
-        num--;
-    if(num >= 1 && num <= 10)
-        number.value = num;
-}
-
 function toggleInfoPopup(id){
     let popup = document.getElementById(id);
 
@@ -212,7 +188,7 @@ function toggleInfoPopup(id){
     document.body.classList.toggle('body--hidden');
 }
 
-function send(){
+function sendCalcBookingPhotoSession(){
     let checkboxEl  = document.querySelectorAll('.calc__argument-row');
     let string = "";
     if(!checkboxEl)
@@ -227,16 +203,21 @@ function send(){
 
     for(let i = 0; i < checkboxEl.length; i++){
         let checkbox = checkboxEl[i].querySelector('input[type=checkbox]');
+        let item = priceItems.get(checkbox.getAttribute('id'));
         if( checkbox.checked ){
-            let label = checkboxEl[i].querySelector('.calc__checkbox');
+            let label = checkboxEl[i].querySelector('label span');
             string += "* " +
                 label.textContent.trim() +
                 " : " + 
-                priceItems.get(checkbox.getAttribute('id')).getPrice() +
-                " грн. \n";
+                item.getPrice() +
+                " грн.";
+            if(item.count > 1)
+                string += " - Кількість: " + item.count;
+            string += "\n";
         }
     }
-    console.log( string );
+    bookingPhotoSessionHidn.value = string;
+    toggleInfoPopup('calcBookingPhotoSession');
 }
 
 function openGalleryPopup(image){

@@ -5,6 +5,7 @@ mixin popup(title, elId="popup")
                 .title__iner
                     h3.title__like-h2= title
                     span.title__separator
-                a(href="#cloce").popup__close X
+                .popup__close
+                    span X
             .popup__content.content-section__content-iner    
                 block
