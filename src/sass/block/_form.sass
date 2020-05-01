@@ -14,10 +14,17 @@ input
     font-size: 1rem
     border: 1px solid $border-color
     outline: none
+    &[type=text]
+        padding: 10px 20px
     &[type=date]
         padding: 10px 10px 10px 20px
     &::-webkit-inner-spin-button
         display: none
+textarea
+    padding: 10px 20px
+    border: 1px solid $border-color
+    outline: none
+    resize: none
 select
     padding: 10px 5px 10px 20px
     font-family: $main-font

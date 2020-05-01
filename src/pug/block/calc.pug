@@ -1,0 +1,88 @@
+include popup
+
+article.container.container--small.calc
+    .section.title__iner.title__iner--center
+        h2.title__like-h1.title__like-h1--uppercase Калькулятор фотосесії
+        span.title__separator
+        p.title__sub-title Збери свою унікальну фотосесію 
+    .section.calc__iner
+        .calc__package-row
+            .calc__package
+                label(for="package_1") #[span Light] 1 година
+                    input#package_1(type="radio", name="package", value="light", checked)
+            .calc__package
+                label(for="package_2") #[span GOLD]  2 година
+                    input#package_2(type="radio", name="package", value="gold")
+        section.calc__price
+            h3 Ціна 
+            .title__separator
+            p#price 0
+
+        .calc__arguments
+            .calc__argument-row
+                label(for="switch-1").calc__checkbox 
+                    i.check
+                    span Додаткові сукні 
+                    input(type="checkbox" id="switch-1" data-price="400"  data-price-gold="800")
+                label(for="switch-num").calc__number
+                    span.calc__minuse -
+                    input(type="number", id="switch-num" value="1" min="1" max="20")
+                    span.calc__pulse +
+            .calc__argument-row
+                label(for="switch-2").calc__checkbox  
+                    i.check
+                    span Оренда фотостудії
+                    input(type="checkbox" id="switch-2" data-price="700")
+            .calc__argument-row
+                label(for="switch-3").calc__checkbox
+                    i.check
+                    span Фотограф
+                    input(type="checkbox" id="switch-3" data-price="1600"  data-price-gold="2500")
+            .calc__argument-row
+                label(for="switch-4").calc__checkbox 
+                    i.check
+                    span Макіяж
+                    input(type="checkbox" id="switch-4" data-price="900")
+            .calc__argument-row
+                label(for="switch-5").calc__checkbox
+                    i.check
+                    span Укладка
+                    input(type="checkbox" id="switch-5" data-price="800")
+            .calc__argument-row
+                label(for="switch-6").calc__checkbox
+                    i.check
+                    span Додаткова ретуш
+                    input(type="checkbox" id="switch-6" data-price="100")
+            .calc__argument-row
+                label(for="switch-7").calc__checkbox
+                    i.check
+                    span Запис фото на флешку
+                    input(type="checkbox" id="switch-7" data-price="250")
+            .calc__argument-row
+                label(for="switch-8").calc__checkbox
+                    i.check
+                    span Фотокнига
+                    input(type="checkbox" id="switch-8" data-price="2500")
+        .calc__action
+            button.btm.btm--action(onclick="sendCalcBookingPhotoSession()") Забронювати
+
++popup('Забронювати фотосесію', 'calcBookingPhotoSession')
+    .form.fitting-form
+        label(for="t-1")
+            input(id="t-1" type="text" placeholder="Ваше ім'я")
+        label(for="t-2")
+            input(id="t-2" type="text" placeholder="Ваш Е-Мail")
+        label(for="t-3")
+            input(id="t-3" type="text" placeholder="Номер телефону")
+        label(for="t-4")
+            input(id="t-4" type="text" placeholder="Бажана дата")
+        label(for="t-5")
+            textarea(id="t-5" placeholder="Коментар" rows="5")
+        input(type="submit").btm.btm--action
+        label(for="bookingPhotoSessionHidn")
+            textarea#bookingPhotoSessionHidn
+
+mixin checkbox-row(labelText, price, num)
+    .calc__argument-row
+        label(for="switch-" + num).calc__checkbox  #[span ] #{labelText}
+            input(type="checkbox" id="switch-" + num data-price= price data-current="0")

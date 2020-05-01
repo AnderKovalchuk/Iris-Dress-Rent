@@ -98,7 +98,6 @@ window.addEventListener('load', () => {
             let thumbnail = e.target.closest('a');
             if(!thumbnail)
                 return;
-            console.log(thumbnail);
             openGalleryPopup(thumbnail.href);
             e.preventDefault();
         });
@@ -107,19 +106,6 @@ window.addEventListener('load', () => {
         close.addEventListener('click', e => {
             openGalleryPopup('');
         });
-
-            // thumbs.onclick = function(event) {
-            //     let thumbnail = event.target.closest('a');
-          
-            //     if (!thumbnail) return;
-            //     showThumbnail(thumbnail.href, thumbnail.title);
-            //     event.preventDefault();
-            //   }
-          
-            //   function showThumbnail(href, title) {
-            //     largeImg.src = href;
-            //     largeImg.alt = title;
-            //   }
     }());
 });
 
@@ -187,15 +173,11 @@ function updatePrice(){
     for(let priceItem of priceItems.values()){
         price += priceItem.getPrice();
     }
-    console.log(priceItems);
-    console.log(price);
     let priceEl  = document.getElementById('price');
     if(!priceEl)
         return;
     priceEl.innerHTML = price + '<span> грн. </span>';
 }
-
-
 
 function toggleInfoPopup(id){
     let popup = document.getElementById(id);
@@ -206,7 +188,7 @@ function toggleInfoPopup(id){
     document.body.classList.toggle('body--hidden');
 }
 
-function send(){
+function sendCalcBookingPhotoSession(){
     let checkboxEl  = document.querySelectorAll('.calc__argument-row');
     let string = "";
     if(!checkboxEl)
@@ -234,7 +216,8 @@ function send(){
             string += "\n";
         }
     }
-    console.log( string );
+    bookingPhotoSessionHidn.value = string;
+    toggleInfoPopup('calcBookingPhotoSession');
 }
 
 function openGalleryPopup(image){
