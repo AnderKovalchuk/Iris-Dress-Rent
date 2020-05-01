@@ -46,6 +46,9 @@
             </section>
         <?php endif; ?>
 
+        <div class="gallery__popup">
+            <span class="gallery__close">X</span><img src="" alt="" >
+        </div>
         <?php if( $images = get_field('pdpp_galery') ) : ?>
             <section class="section gallery"> 
                 <div class="title__iner title__iner--center gallery__title">
@@ -54,7 +57,9 @@
                 <div class="gallery__iner gallery__iner--3">
                     <?php foreach( $images as $image_id ) : ?>
                         <figure class="gallery__image">
-                            <img src="<?php echo wp_get_attachment_image_url( $image_id,  'large' ); ?>" alt=""/>
+                            <a href="<?php echo wp_get_attachment_image_url( $image_id,  'full' ); ?>">
+                                <img src="<?php echo wp_get_attachment_image_url( $image_id,  'large' ); ?>" alt=""/>
+                            </a>
                         </figure>
                     <?php endforeach; ?>
                 </div>

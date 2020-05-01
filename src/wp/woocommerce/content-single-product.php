@@ -89,10 +89,17 @@ if ( post_password_required() ) {
 				<div class="title__iner title__iner--center gallery__title">
 					<h2 class="title__like-h2">Фото</h2><span class="title__separator"></span>
 				</div>
+
+				<div class="gallery__popup">
+            		<span class="gallery__close">X</span><img src="" alt="" >
+				</div>
+				
 				<div class="gallery__iner gallery__iner--3">
 					<?php foreach ( $attachment_ids as $attachment_id ): ?>
 						<figure class="gallery__image">
-							<img src="<?php echo wp_get_attachment_image_url( $attachment_id,  'large' ); ?>" alt="">
+							<a href="<?php echo wp_get_attachment_image_url( $attachment_id,  'full' ); ?>">
+								<img src="<?php echo wp_get_attachment_image_url( $attachment_id,  'large' ); ?>" alt="">
+							</a>
 						</figure>
 					<?php endforeach; ?>
 				</div>
