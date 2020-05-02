@@ -18,6 +18,15 @@
 	<meta name="theme-color" content="#ffffff">
 
 	<?php wp_head(); ?>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131361371-3"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-131361371-3');
+	</script>
 
 	<!-- Facebook Pixel Code -->
 	<script>
@@ -38,7 +47,8 @@
 </head>
 
 <body>
-<header class="header">
+<?php echo is_home(); ?>
+<header class="header <?php if (is_front_page()) { echo 'header--home'; } ?> ">
 	<div class="container header__iner">
 		<div class="header__logo">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">

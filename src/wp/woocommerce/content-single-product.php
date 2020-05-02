@@ -33,11 +33,12 @@ if ( post_password_required() ) {
 ?>
 
 <main class="prodyct__main">
-	<div class="page">
+	<div class="page" itemscope itemtype="http://schema.org/Product">
+		<meta itemprop="sku" content="<?php echo $product->sku; ?>">
 		<section class="section product__iner">
 			<div class="product__mob-title">
 				<div class="title__iner title__iner--center">
-					<h3 class="title__like-h1">
+					<h3 class="title__like-h1" itemprop="name">
 						<?php echo $product->name; ?>
 					</h3>
 					<span class="title__separator"></span>
@@ -45,7 +46,7 @@ if ( post_password_required() ) {
 			</div>
 			<div class="product__image">
 				<figure>
-					<img src="<?php echo wp_get_attachment_image_url( $product->image_id,  'large' ); ?>" alt="">
+					<img src="<?php echo wp_get_attachment_image_url( $product->image_id,  'large' ); ?>" alt="<?php echo "Фотографія сукні" + $product->name; ?>"  itemprop="image" >
 				</figure>
 			</div>
 			<div class="product__info">
@@ -57,7 +58,7 @@ if ( post_password_required() ) {
 						<span class="title__separator"></span>
 					</div>
 				</div>
-				<div class="product__description content-section__content-iner">
+				<div class="product__description content-section__content-iner"  itemprop="description">
 					<?php the_content(); ?>
 				</div>
 				<div class="product__characteristics">
@@ -70,8 +71,11 @@ if ( post_password_required() ) {
 								<?php echo $product->get_attribute( $product_attribute[ 'name' ] );  ?>
 							</li>
 						<?php endforeach; ?>
-						<li><span>Вартість: </span> 
-							<?php echo $product->price . ' ' . get_option('woocommerce_currency'); ?> 
+						<li itemprop="offers" itemscope itemtype="http://schema.org/Offer"><span>Вартість: </span>
+							<meta itemprop="priceCurrency" content="UAH">
+							<meta itemprop="price" content="<?php echo $product->price; ?>">
+							<?php echo $product->price . ' ' . get_option('woocommerce_currency'); ?>
+							<link itemprop="availability" href="http://schema.org/InStock"> 
 						</li>
 					</ul>
 				</div>
@@ -81,6 +85,7 @@ if ( post_password_required() ) {
 					<button class="popup__open btm btm--service" onclick="toggleInfoPopup('infoPopup')">Як забронювати?</button>
 				</div>
 			</div>
+			<link itemprop="url" href = "<?php echo get_permalink( $product->ID ); ?>">
 		</section>
 
 		<?php $attachment_ids = $product->gallery_image_ids;
@@ -107,6 +112,7 @@ if ( post_password_required() ) {
 		<?php endif; ?>
 	</div>
 </main>
+
 <div class="popup" id="infoPopup">
 	<div class="popup__iner">
 		<div class="popup__title">

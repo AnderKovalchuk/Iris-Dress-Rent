@@ -41,7 +41,7 @@ add_action( 'after_setup_theme', 'iris_setup_theme' );
 function iris_style() {
 	wp_enqueue_style(
         'iris-template-style',
-        get_template_directory_uri() . '/css/main.css?v2' );
+        get_template_directory_uri() . '/css/main.css?v3' );
 }
 function iris_script() {
     wp_enqueue_script( 

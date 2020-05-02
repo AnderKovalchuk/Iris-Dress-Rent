@@ -39,6 +39,9 @@ $woo_categories = get_categories( $prod_cat_args );
                 </div>
             <?php endforeach; ?>
         </div>
+        <div class="section content-section__content-iner">
+			<?php echo the_content(); ?>
+		</div>
     </div>
 </main>
         

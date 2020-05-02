@@ -90,7 +90,10 @@ if ( woocommerce_product_loop() ) {
 	 *
 	 * @hooked woocommerce_pagination - 10
 	 */
-	do_action( 'woocommerce_after_shop_loop' );
+	?>
+	<?php do_action( 'woocommerce_after_shop_loop' ); ?>
+	<br><br>
+	<?php
 } else {
 	/**
 	 * Hook: woocommerce_no_products_found.
