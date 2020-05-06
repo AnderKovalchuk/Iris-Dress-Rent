@@ -9,16 +9,16 @@ article.container.container--small.calc
         
         .calc__package-row
             .calc__package-title
-                h3 Виберіть тариф
+                h3 Вибери тариф
             .calc__package
                 label(for="package_1") 
                     i.check
-                    span Light (1 година)
+                    p Light #[span (1 година)]
                     input#package_1(type="radio", name="package", value="light", checked)
             .calc__package
                 label(for="package_2") 
                     i.check
-                    span GOLD (2 година)
+                    p GOLD #[span (2 години)]
                     input#package_2(type="radio", name="package", value="gold")
         
         .calc__arguments
@@ -67,7 +67,7 @@ article.container.container--small.calc
                 .calc__argument-item
                     label(for="switch-5").calc__checkbox
                         i.check
-                        span Укладка стиліста
+                        span Укладка від стиліста
                         input(type="checkbox" id="switch-5" data-price="700")
                     .calc__info
                         .calc__info-icon i
@@ -107,7 +107,7 @@ article.container.container--small.calc
         section.calc__price
             p#price 0
             .title__separator
-            h3 Ціна 
+            h3 1 Сукня 
 
         .calc__addition-arguments
             .calc__argument-row
@@ -119,7 +119,7 @@ article.container.container--small.calc
                     .calc__info
                         .calc__info-icon i
                         .calc__info-block
-                            p Ти можеш до замовити додаткову ретуш до основної кількості, обраного пакету. На терміни здачі твоїх світлин це не впливає. 
+                            p Ти можеш дозамовити додаткову ретуш до основної кількості, обраного пакету. На терміни здачі твоїх світлин це не впливає. 
             .calc__argument-row
                 .calc__argument-item.calc__argument-item--no-border
                     label(for="switch-10").calc__checkbox.calc__checkbox--no-border
@@ -132,7 +132,7 @@ article.container.container--small.calc
                             p Обробка фотографій відбувається в порядку черги. Зазвичай, ми віддаємо через 3 тижні. Ти можеш прискорити цей процес до 2-3 днів за доплату 25% від вартості пакету. Твої фото будуть зроблені в пріоритетному режимі.
         .calc__background
         .calc__action
-            button.btm.btm--action(onclick="sendCalcBookingPhotoSession()") Забронювати
+            button.btm.btm--action(onclick="sendCalcBookingPhotoSession()") ЗАМОВИТИ
 
 +popup('Забронювати фотосесію', 'calcBookingPhotoSession')
     .form.fitting-form

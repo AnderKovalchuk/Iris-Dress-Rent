@@ -45,7 +45,7 @@ window.addEventListener('load', () => {
         priceItems.set(
             'base-price', 
             new PriceItem(
-                800, 1, true, false
+                800, 'Базова вартість', 1, true, false
             )
         );
         for(let i = 0; i < checkboxEl.length; i++){
@@ -56,6 +56,7 @@ window.addEventListener('load', () => {
 
             item.price = checkbox.getAttribute('data-price');
             item.priseGold = checkbox.getAttribute('data-price-gold');
+            item.name = checkboxEl[i].querySelector('label span').textContent.trim();
 
             checkbox.addEventListener('change', e => {
                 updateCheckbox(item, checkbox, label, number);
@@ -80,7 +81,6 @@ window.addEventListener('load', () => {
                         updateNumber(item, number, false);
                 });
             }
-
 
             if(checkbox.getAttribute('data-percent')){
                 priceItemsPercent.set(checkbox.getAttribute('id'), item); 
@@ -116,8 +116,10 @@ window.addEventListener('load', () => {
     }());
 });
 
-function PriceItem(price, count, isActive, priseGold){
+function PriceItem(price, name, count, isActive, priseGold){
     this.price = price;
+    this.name = name;
+
     if(count)
         this.count = count;
     else
@@ -204,6 +206,7 @@ function toggleInfoPopup(id){
 function sendCalcBookingPhotoSession(){
     let checkboxEl  = document.querySelectorAll('.calc__argument-row');
     let string = "";
+    let totalPrice = 0;
     if(!checkboxEl)
         return;
 
@@ -214,22 +217,33 @@ function sendCalcBookingPhotoSession(){
 
     string += "\nВибрані послуги: \n";
 
-    for(let i = 0; i < checkboxEl.length; i++){
-        let checkbox = checkboxEl[i].querySelector('input[type=checkbox]');
-        let item = priceItems.get(checkbox.getAttribute('id'));
-        if( checkbox.checked ){
-            let label = checkboxEl[i].querySelector('label span');
-            string += "* " +
-                label.textContent.trim() +
-                " : " + 
-                item.getPrice() +
-                " грн.";
-            if(item.count > 1)
-                string += " - Кількість: " + item.count;
-            string += "\n";
-        }
+    for(let priceItem of priceItems.values()){
+        if(!priceItem.isActive)
+            continue;
+        string += "* " +
+            priceItem.name + " : " +
+            priceItem.getPrice() + " грн.";
+        if(priceItem.count > 1)
+            string += " - Кількість: " + priceItem.count;
+        string += "\n";
+        totalPrice += priceItem.getPrice();
     }
+
+    string += "\nДодаткові послуги: \n";
+    let priceProsent = totalPrice;
+    for(let priceItem of priceItemsPercent.values()){
+        if (!priceItem.isActive)
+            continue;
+        let price = priceProsent * priceItem.price / 100;
+        string += "* " +
+            priceItem.name + " : " +
+            price + " грн. \n";
+
+        totalPrice += price;
+    }
+    string += "\nЗагальна вартість: " + totalPrice + " грн. \n";
     bookingPhotoSessionHidn.value = string;
+    console.log(string);
     toggleInfoPopup('calcBookingPhotoSession');
 }
 
