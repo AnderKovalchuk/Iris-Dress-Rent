@@ -95,7 +95,7 @@
 
                         <div class="project__action">
                             <button class="btm btm--action"
-                                onclick="openPopup('<?php echo the_title() . ' Пакет: ' . get_sub_field('pdpp_service_name'); ?>')">
+                                onclick="fbq('track', 'InitiateCheckout'); openPopup('<?php echo the_title() . ' Пакет: ' . get_sub_field('pdpp_service_name'); ?>')">
                                 Забронювати
                             </button>
                         </div>

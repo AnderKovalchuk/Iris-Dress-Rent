@@ -19,39 +19,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<li <?php wc_product_cat_class( '', $category ); ?>>
-	<?php
-	/**
-	 * woocommerce_before_subcategory hook.
-	 *
-	 * @hooked woocommerce_template_loop_category_link_open - 10
-	 */
-	do_action( 'woocommerce_before_subcategory', $category );
+<div class="cart__iner">
+	<a href="<?php echo get_term_link( $category->term_id, 'product_cat' ); ?>">
 
-	/**
-	 * woocommerce_before_subcategory_title hook.
-	 *
-	 * @hooked woocommerce_subcategory_thumbnail - 10
-	 */
-	do_action( 'woocommerce_before_subcategory_title', $category );
+		<?php 
+			$category_thumbnail_id = get_term_meta(
+				$category->term_id, 'thumbnail_id', true); ?>
 
-	/**
-	 * woocommerce_shop_loop_subcategory_title hook.
-	 *
-	 * @hooked woocommerce_template_loop_category_title - 10
-	 */
-	do_action( 'woocommerce_shop_loop_subcategory_title', $category );
-
-	/**
-	 * woocommerce_after_subcategory_title hook.
-	 */
-	do_action( 'woocommerce_after_subcategory_title', $category );
-
-	/**
-	 * woocommerce_after_subcategory hook.
-	 *
-	 * @hooked woocommerce_template_loop_category_link_close - 10
-	 */
-	do_action( 'woocommerce_after_subcategory', $category );
-	?>
-</li>
+		<figure class="cart__image cart__image--not-bottom-radius">
+			<img 
+				src="<?php echo wp_get_attachment_image_url( $category_thumbnail_id,  'large' ); ?>" 
+				alt="<?php echo $category->name; ?>">
+		</figure>
+		<h3 class="cart__title"> <?php echo $category->name; ?> </h3>
+	</a>
+</div>

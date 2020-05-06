@@ -46,9 +46,25 @@ function iris_style() {
 function iris_script() {
     wp_enqueue_script( 
         'iris-template-script', 
-        get_template_directory_uri() . '/js/main.js', '1', true );
+		get_template_directory_uri() . '/js/main.js', '1', true );
+	if(is_product())
+		wp_add_inline_script('iris-template-script', "
+		window.addEventListener('load', () => {
+			let send = document.getElementById('awooc-custom-order-button');
+			send.addEventListener( 'click', function( event ) {
+				fbq('track', 'InitiateCheckout' );
+			});
+		});
+		fbq('track', 'ViewContent');", '1');
+	
+	wp_add_inline_script('iris-template-script', "
+	document.addEventListener( 'wpcf7mailsent', function( event ) {
+		fbq('track', 'CompleteRegistration' );
+	}, false );", '1');
 }
-
+function iris_fb_product_script(){
+	wp_add_inline_script('my_scripts', 'alert("!");');
+}
 add_action( 'wp_print_styles', 'iris_style' );
 add_action( 'wp_enqueue_scripts', 'iris_script' );
 
