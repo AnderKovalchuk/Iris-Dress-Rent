@@ -18,9 +18,9 @@
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <article class="section content-section">
             <header class="title__iner content-section__title">
-                <h2 class="title__like-h1 title__like-h1">
+                <h1 class="title__like-h1 title__like-h1">
                     <?php the_title(); ?>
-                </h2>
+                </h1>
                 <span class="title__separator"></span>
             </header>
             <div class="content-section__content-iner">

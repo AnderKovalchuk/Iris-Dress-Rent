@@ -70,9 +70,9 @@
     <div class="container">
         <div class="navigation__title">
             <?php if( is_post_type_archive() ) : ?>
-                <h1> <?php echo post_type_archive_title(); ?> </h1>
+                <p> <?php echo post_type_archive_title(); ?> </p>
             <?php else : ?>
-                <h1> <?php echo esc_html( get_the_title() ); ?> </h1>
+                <p> <?php echo esc_html( get_the_title() ); ?> </p>
             <?php endif; ?>
         </div>
         <?php dimox_breadcrumbs(); ?>

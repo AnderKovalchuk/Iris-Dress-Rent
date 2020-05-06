@@ -15,9 +15,9 @@ $woo_categories = get_categories( $prod_cat_args );
 <main class="category__main">
 	<div class="page">
 		<div class="title__iner title__iner--center page__title">
-			<h2 class="title__like-h1 title__like-h1--uppercase">
+			<h1 class="title__like-h1 title__like-h1--uppercase">
                 <?php echo esc_html( get_the_title() ); ?>
-            </h2>
+            </h1>
             <span class="title__separator"></span>
         </div>
         <div class="category__iner">

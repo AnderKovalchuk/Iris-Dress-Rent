@@ -3,9 +3,9 @@
 <main class="projects__main">
     <div class="container">
         <div class="title__iner title__iner--center page__title">
-            <h2 class="title__like-h1 title__like-h1--uppercase">
+            <h1 class="title__like-h1 title__like-h1--uppercase">
             	Фотодні та фотопроекти
-            </h2>
+            </h1>
             <span class="title__separator"></span>
         </div>
 	</div>

@@ -35,9 +35,9 @@ do_action( 'woocommerce_before_main_content' );
 		<header class="woocommerce-products-header">
 			<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 				<div class="title__iner title__iner--center page__title">
-					<h2 class="title__like-h1 title__like-h1--uppercase">
+					<h1 class="title__like-h1 title__like-h1--uppercase">
 						<?php woocommerce_page_title(); ?>
-					</h2>
+					</h1>
 					<span class="title__separator"></span>
 				</div>
 			<?php endif; ?>

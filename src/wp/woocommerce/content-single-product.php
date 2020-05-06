@@ -52,9 +52,9 @@ if ( post_password_required() ) {
 			<div class="product__info">
 				<div class="product__title">
 					<div class="title__iner">
-						<h2 class="title__like-h2">
+						<h1 class="title__like-h2">
 							<?php echo $product->name; ?>
-						</h2>
+						</h1>
 						<span class="title__separator"></span>
 					</div>
 				</div>
