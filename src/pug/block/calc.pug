@@ -6,63 +6,131 @@ article.container.container--small.calc
         span.title__separator
         p.title__sub-title Збери свою унікальну фотосесію 
     .section.calc__iner
+        
         .calc__package-row
+            .calc__package-title
+                h3 Виберіть тариф
             .calc__package
-                label(for="package_1") #[span Light] 1 година
+                label(for="package_1") 
+                    i.check
+                    span Light (1 година)
                     input#package_1(type="radio", name="package", value="light", checked)
             .calc__package
-                label(for="package_2") #[span GOLD]  2 година
+                label(for="package_2") 
+                    i.check
+                    span GOLD (2 година)
                     input#package_2(type="radio", name="package", value="gold")
-        section.calc__price
-            h3 Ціна 
-            .title__separator
-            p#price 0
-
+        
         .calc__arguments
             .calc__argument-row
-                label(for="switch-1").calc__checkbox 
-                    i.check
-                    span Додаткові сукні 
-                    input(type="checkbox" id="switch-1" data-price="400"  data-price-gold="800")
-                label(for="switch-num").calc__number
-                    span.calc__minuse -
-                    input(type="number", id="switch-num" value="1" min="1" max="20")
-                    span.calc__pulse +
+                .calc__argument-item
+                    label(for="switch-1").calc__checkbox 
+                        i.check
+                        span Додаткові сукні 
+                        input(type="checkbox" id="switch-1" data-price="400"  data-price-gold="800")
+                .calc__argument-item.calc__argument-item--help
+                    label(for="switch-num").calc__number
+                        span.calc__minuse -
+                        input(type="number", id="switch-num" value="1" min="1" max="20")
+                        span.calc__pulse +
             .calc__argument-row
-                label(for="switch-2").calc__checkbox  
-                    i.check
-                    span Оренда фотостудії
-                    input(type="checkbox" id="switch-2" data-price="700")
+                .calc__argument-item
+                    label(for="switch-2").calc__checkbox  
+                        i.check
+                        span Оренда фотостудії
+                        input(type="checkbox" id="switch-2" data-price="700")
+                    .calc__info
+                        .calc__info-icon i
+                        .calc__info-block
+                            p Включає в себе послуги з пошуку, підбору, бронювання та оплати необхідних локацій.
             .calc__argument-row
-                label(for="switch-3").calc__checkbox
-                    i.check
-                    span Фотограф
-                    input(type="checkbox" id="switch-3" data-price="1600"  data-price-gold="2500")
+                .calc__argument-item
+                    label(for="switch-3").calc__checkbox
+                        i.check
+                        span Фотограф
+                        input(type="checkbox" id="switch-3" data-price="1600"  data-price-gold="2500")
+                    .calc__info
+                        .calc__info-icon i
+                        .calc__info-block
+                            p Включає в себе складання попереднього плану зйомки, узгодження всіх образів
             .calc__argument-row
-                label(for="switch-4").calc__checkbox 
-                    i.check
-                    span Макіяж
-                    input(type="checkbox" id="switch-4" data-price="900")
+                .calc__argument-item
+                    label(for="switch-4").calc__checkbox 
+                        i.check
+                        span Макіяж
+                        input(type="checkbox" id="switch-4" data-price="800")
+                    .calc__info
+                        .calc__info-icon i
+                        .calc__info-block
+                            p Ти отримаєш 1 повноцінний Make up для фотосесії. У послугу врахована вартість гримерного місця при фотосесії і планування образу.
             .calc__argument-row
-                label(for="switch-5").calc__checkbox
-                    i.check
-                    span Укладка
-                    input(type="checkbox" id="switch-5" data-price="800")
+                .calc__argument-item
+                    label(for="switch-5").calc__checkbox
+                        i.check
+                        span Укладка стиліста
+                        input(type="checkbox" id="switch-5" data-price="700")
+                    .calc__info
+                        .calc__info-icon i
+                        .calc__info-block
+                            p Тобі зроблять 1 повноцінну укладку волосся для фотосесії. У вартість враховані всі витратні матеріали майстра, послуги самого фахівця, оренда гримерного місця і планування образу.
             .calc__argument-row
-                label(for="switch-6").calc__checkbox
-                    i.check
-                    span Додаткова ретуш
-                    input(type="checkbox" id="switch-6" data-price="100")
+                .calc__argument-item
+                    label(for="switch-6").calc__checkbox
+                        i.check
+                        span Фірмова флешка
+                        input(type="checkbox" id="switch-6" data-price="250")
+                    .calc__info
+                        .calc__info-icon i
+                        .calc__info-block
+                            p Всі твої фото зі зйомки будуть на нашій брендовій флешці розміром 1Гб
             .calc__argument-row
-                label(for="switch-7").calc__checkbox
-                    i.check
-                    span Запис фото на флешку
-                    input(type="checkbox" id="switch-7" data-price="250")
+                .calc__argument-item
+                    label(for="switch-7").calc__checkbox
+                        i.check
+                        span Фотокнига
+                        input(type="checkbox" id="switch-7" data-price="2500")
+                    .calc__info
+                        .calc__info-icon i
+                        .calc__info-block
+                            p Розмір 25*25, 15 розворотів. Обкладинка може бути з тканини або ж з іншого матеріалу, сюди входить компонування фотокниги та її верстка нашим фотографом. Термін виготовлення до 3 тижнів. Передача з рук в руки або відправка поштою.
             .calc__argument-row
-                label(for="switch-8").calc__checkbox
-                    i.check
-                    span Фотокнига
-                    input(type="checkbox" id="switch-8" data-price="2500")
+                .calc__argument-item
+                    label(for="switch-8").calc__checkbox
+                        i.check
+                        span Конфіденційність зйомки
+                        input(type="checkbox" id="switch-8" data-price="1000")
+                    .calc__info
+                        .calc__info-icon i
+                        .calc__info-block
+                            p Якщо ти хочеш аби твої фото не публікувалися у нашому каталозі та на сторінках наших соціальних мереж.
+
+        section.calc__price
+            p#price 0
+            .title__separator
+            h3 Ціна 
+
+        .calc__addition-arguments
+            .calc__argument-row
+                .calc__argument-item.calc__argument-item--no-border
+                    label(for="switch-9").calc__checkbox.calc__checkbox--no-border
+                        i.check
+                        span Додаткова ретуш
+                        input(type="checkbox" id="switch-9" data-price="30" data-percent="true")
+                    .calc__info
+                        .calc__info-icon i
+                        .calc__info-block
+                            p Ти можеш до замовити додаткову ретуш до основної кількості, обраного пакету. На терміни здачі твоїх світлин це не впливає. 
+            .calc__argument-row
+                .calc__argument-item.calc__argument-item--no-border
+                    label(for="switch-10").calc__checkbox.calc__checkbox--no-border
+                        i.check
+                        span Прискорена обробка
+                        input(type="checkbox" id="switch-10" data-price="25" data-percent="true")
+                    .calc__info
+                        .calc__info-icon i
+                        .calc__info-block
+                            p Обробка фотографій відбувається в порядку черги. Зазвичай, ми віддаємо через 3 тижні. Ти можеш прискорити цей процес до 2-3 днів за доплату 25% від вартості пакету. Твої фото будуть зроблені в пріоритетному режимі.
+        .calc__background
         .calc__action
             button.btm.btm--action(onclick="sendCalcBookingPhotoSession()") Забронювати
 
