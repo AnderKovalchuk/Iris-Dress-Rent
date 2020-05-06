@@ -7,7 +7,14 @@
     align-items: center
     &--col-1
         grid-template-columns: 1fr
-    
+    &--pozition-c-1-3
+        grid-column: 1 / 3
+        +m-table()
+            grid-column: 1 / 2
+    &--pozition-c-2-3
+        grid-column: 2 / 3
+        +m-table()
+            grid-column: 1 / 2
     select
         width: 100%
     label
@@ -28,3 +35,5 @@
     +m-table()
         grid-template-columns: 1fr
         gap: 15px
+        .btm
+            padding: 20px

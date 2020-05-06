@@ -1,6 +1,7 @@
 "use strict";
 
 let priceItems = new Map();
+let priceItemsPercent = new Map();
 let packagePrice = '';
 let packageName = 'light';
 
@@ -79,7 +80,13 @@ window.addEventListener('load', () => {
                         updateNumber(item, number, false);
                 });
             }
-            priceItems.set(checkbox.getAttribute('id'), item); 
+
+
+            if(checkbox.getAttribute('data-percent')){
+                priceItemsPercent.set(checkbox.getAttribute('id'), item); 
+            } else {
+                priceItems.set(checkbox.getAttribute('id'), item);
+            }
         }
 
         updatePackage();
@@ -176,6 +183,12 @@ function updatePrice(){
     let priceEl  = document.getElementById('price');
     if(!priceEl)
         return;
+    let priceProsent = price;
+    for(let priceItem of priceItemsPercent.values()){
+        if (priceItem.isActive)
+            price += priceProsent * priceItem.price / 100
+    }
+    price = Math.round(price);
     priceEl.innerHTML = price + '<span> грн. </span>';
 }
 
