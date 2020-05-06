@@ -102,8 +102,7 @@
             &:hover
                 color: $main-color     
         +m-table()
-            //display: flex
-            display: none
+            display: flex
             flex-direction: column
             position: relative
             top: 0
@@ -118,6 +117,10 @@
                 color: #fff
                 font-weight: normal
                 text-transform: uppercase
+    &__sub-menu-item
+        &--no-mob
+            +m-table()
+                display: none !important
     &__lang
         position: relative
         font-size: 0.9rem
@@ -141,7 +144,7 @@
         +m-table()
             display: flex
             position: relative
-            padding: 5vw 10vw
+            padding: 0 10vw
             background-color: transparent
             border-bottom: none
     &__lang-item    
@@ -175,7 +178,29 @@
             &--active
                 a
                     text-decoration: underline
-                    
+    &__mob-contact
+        display: none
+        flex-direction: row-reverse
+        align-items: center
+        justify-content: space-between
+        width: 100%
+        padding: 3vw 10vw
+        font-family: $title-font
+        font-size: 1.2em
+        color: #fff
+        text-align: right
+        a
+            color: #ffffff
+            text-decoration: none
+        +m-table()
+            display: flex
+    &__mob-social
+        margin-top: 5px
+        .icon 
+            width: 25px
+            height: 25px
+            margin-right: 10px
+
     &__mobile-burger-iner
         display: none
         position: relative
@@ -213,6 +238,40 @@
                     transform: rotate(-90deg)
                     transition: bottom 0.1s ease-out,transform 0.3s 0.14s cubic-bezier(0.215,0.61,0.355,1),background-color 0.15s ease
 
+    &__service
+        display: flex
+        justify-content: space-between
+        align-items: center
+        border-bottom: 1px solid $border-color
+        +m-table()
+            display: none
+    &__contact
+        font-size: 0.9em
+        a
+            font-weight: 400
+            color: $main-color
+            text-decoration: none
+            &:hover
+                text-decoration: underline
+                color: $accent-color
+    &__social
+        display: flex
+        justify-content: flex-end
+        a
+            display: inline-block
+            margin: 5px
+            padding: 5px
+            font-size: 0
+            background-color: $addition-text-color
+            border-radius: 50%
+            &:hover
+                background-color: $accent-color
+        .icon
+            width: 12px
+            height: 12px
+        +m-table()
+            justify-content: center
+    
     &--home
         +m-min-table()
             .header__iner

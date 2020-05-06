@@ -3,6 +3,15 @@ include ../includes/main-menu-item
 mixin header-base(isHome)
     - var headerClass = isHome ? 'header header--home' : 'header'
     header(class = headerClass)
+        .container.header__service
+            .header__contact
+                p 
+                    a(href="tel:+380634300882") +38 063 430 08 82 
+            .header__social
+                a(href="#" target="_blank")
+                    i.icon.icon--inst
+                a(href="#" target="_blank")
+                    i.icon.icon--fb
         .container.header__iner
             .header__logo
                 a(href="/")
@@ -15,7 +24,7 @@ mixin header-base(isHome)
                     +main-menu-item('Фотодни и Фотопроекты','projects.html')
                     +main-menu-item('О нас','contact.html')
                         ul.header__sub-menu
-                            li
+                            li.header__sub-menu-item--no-mob
                                 a(href='#') Контакты
                             li
                                 a(href='#') Подарочные сертификаты
@@ -26,5 +35,13 @@ mixin header-base(isHome)
                             a(href="/") RU
                         li.header__lang-item.header__lang-item--active
                             a(href="/") UA
+                .header__mob-contact
+                    p
+                        a(href="tel:+380634300882") +38 063 430 08 82 
+                    p.header__mob-social
+                        a(href="#" target="_blank")
+                            i.icon.icon--inst
+                        a(href="#" target="_blank")
+                            i.icon.icon--fb
             .header__mobile-burger-iner
                 span
