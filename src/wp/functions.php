@@ -14,8 +14,8 @@ if( function_exists('acf_add_options_page') ) {
 	));
 	
 	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Фото дни / фото проекты',
-		'menu_title'	=> 'Фото дни / фото проекты',
+		'page_title' 	=> 'Фотодні',
+		'menu_title'	=> 'Фотодні',
 		'menu_slug' 	=> 'iris-add-info-project',
 		'parent_slug'	=> 'iris-add-info',
 	));
@@ -41,12 +41,12 @@ add_action( 'after_setup_theme', 'iris_setup_theme' );
 function iris_style() {
 	wp_enqueue_style(
         'iris-template-style',
-        get_template_directory_uri() . '/css/main.css?v3' );
+        get_template_directory_uri() . '/css/main.css?v4' );
 }
 function iris_script() {
     wp_enqueue_script( 
         'iris-template-script', 
-		get_template_directory_uri() . '/js/main.js', '1', true );
+		get_template_directory_uri() . '/js/main.js?v4', '1', true );
 	if(is_product())
 		wp_add_inline_script('iris-template-script', "
 		window.addEventListener('load', () => {
@@ -99,9 +99,9 @@ add_action('init', 'my_custom_init');
 function my_custom_init(){
 	register_post_type('project', array(
 		'labels'             => array(
-			'name'               => 'Фотодни и Фотопроекты', // Основное название типа записи
-			'singular_name'      => 'Проект', // отдельное название записи типа Book
-			'add_new'            => 'Добавить',
+			'name'               => 'Розділ "Фотодні"', // Основное название типа записи
+			'singular_name'      => 'Сторінка "Фотодні"', // отдельное название записи типа Book
+			'add_new'            => 'Додати',
 			'add_new_item'       => 'Добавить',
 			'edit_item'          => 'Редактировать',
 			'new_item'           => 'Новая',
@@ -110,7 +110,7 @@ function my_custom_init(){
 			'not_found'          => 'Не найдено',
 			'not_found_in_trash' => 'В корзине ничего не найдено',
 			'parent_item_colon'  => '',
-            'menu_name'          => 'Фотодни и Фотопроекты'
+            'menu_name'          => 'Фотодні'
         ),
 		'public'             => true,
 		'publicly_queryable' => true,
@@ -354,8 +354,10 @@ class iris_walker_nav_menu extends Walker_Nav_Menu {
     function start_el( &$output, $item, $depth, $args ) {
         global $wp_query;           
         $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
+		$class_names = esc_attr( implode( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) ) );
 
-        $output .= '<li>';
+        $output .= '<li class="' . $class_names . '">';
         $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
         $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
         $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';

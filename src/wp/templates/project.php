@@ -60,15 +60,19 @@ $projects = get_posts( array(
         <div class="section calc__iner">
             <div class="calc__package-row">
                 <div class="calc__package-title">
-                    <h3>Виберіть тариф</h3>
+                    <h3>Вибери тариф</h3>
                 </div>
                 <div class="calc__package">
-                    <label for="package_1"> <i class="check"></i><span>Light (1 година)</span>
+                    <label for="package_1"> 
+                        <i class="check"></i>
+                        <p>Light <span>(1 година)</span></p>
                         <input id="package_1" type="radio" name="package" value="light" checked>
                     </label>
                 </div>
                 <div class="calc__package">
-                    <label for="package_2"> <i class="check"></i><span>GOLD (2 година)</span>
+                    <label for="package_2">
+                        <i class="check"></i>
+                        <p>GOLD <span>(2 години)</span></p>
                         <input id="package_2" type="radio" name="package" value="gold">
                     </label>
                 </div>
@@ -127,7 +131,7 @@ $projects = get_posts( array(
                 </div>
                 <div class="calc__argument-row">
                     <div class="calc__argument-item">
-                        <label class="calc__checkbox" for="switch-5"><i class="check"></i><span>Укладка стиліста</span>
+                        <label class="calc__checkbox" for="switch-5"><i class="check"></i><span>Укладка від стиліста</span>
                             <input type="checkbox" id="switch-5" data-price="700">
                         </label>
                         <div class="calc__info">
@@ -181,7 +185,7 @@ $projects = get_posts( array(
             <section class="calc__price">
                 <p id="price">0</p>
                 <div class="title__separator"></div>
-                <h3>Ціна </h3>
+                <h3>1 Сукня</h3>
             </section>
             <div class="calc__addition-arguments">
                 <div class="calc__argument-row">
@@ -192,7 +196,7 @@ $projects = get_posts( array(
                         <div class="calc__info">
                             <div class="calc__info-icon">i</div>
                             <div class="calc__info-block">
-                                <p>Ти можеш до замовити додаткову ретуш до основної кількості, обраного пакету. На терміни здачі твоїх світлин це не впливає. </p>
+                                <p>Ти можеш дозамовити додаткову ретуш до основної кількості, обраного пакету. На терміни здачі твоїх світлин це не впливає. </p>
                             </div>
                         </div>
                     </div>
@@ -213,7 +217,7 @@ $projects = get_posts( array(
             </div>
             <div class="calc__background"></div>
             <div class="calc__action">
-                <button class="btm btm--action" onclick="fbq('track', 'InitiateCheckout'); sendCalcBookingPhotoSession()">Забронювати</button>
+                <button class="btm btm--action" onclick="fbq('track', 'InitiateCheckout'); sendCalcBookingPhotoSession()">ЗАМОВИТИ</button>
             </div>
         </div>
     </article>

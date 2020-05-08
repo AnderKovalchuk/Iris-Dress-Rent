@@ -51,6 +51,19 @@
 <body>
 <?php echo is_home(); ?>
 <header class="header <?php if (is_front_page()) { echo 'header--home'; } ?> ">
+	<div class="container header__service">
+		<div class="header__contact">
+			<p> <a href="tel:+380634300882">+38 063 430 08 82 </a></p>
+		</div>
+		<div class="header__social">
+			<a href="https://www.instagram.com/iris_dress_rent/" target="_blank">
+				<i class="icon icon--inst"></i>
+			</a>
+			<a href="https://www.facebook.com/iris.dress.kiev" target="_blank">
+				<i class="icon icon--fb"></i>
+			</a>
+		</div>
+	</div>
 	<div class="container header__iner">
 		<div class="header__logo">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -74,6 +87,13 @@
 					'theme_location'  => 'iris-main-menu'
 				) );
 			?>
+			<div class="header__mob-contact">
+				<p><a href="tel:+380634300882">+38 063 430 08 82 </a></p>
+				<p class="header__mob-social">
+					<a href="#" target="_blank"><i class="icon icon--inst"></i></a>
+					<a href="#" target="_blank"><i class="icon icon--fb"></i></a>
+				</p>
+			</div>
 		</nav>
 		<div class="header__mobile-burger-iner"><span></span></div>
 	</div>

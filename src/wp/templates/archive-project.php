@@ -4,7 +4,7 @@
     <div class="container">
         <div class="title__iner title__iner--center page__title">
             <h1 class="title__like-h1 title__like-h1--uppercase">
-            	Фотодні та фотопроекти
+            	Фотодні
             </h1>
             <span class="title__separator"></span>
         </div>
